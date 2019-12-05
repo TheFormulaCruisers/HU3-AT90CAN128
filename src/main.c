@@ -17,14 +17,16 @@
 int main (void) {
 	
 	can_init();
-	can_filter(1);
+	sei();
 
-	uint8_t dat[4] = {1,2,3,4};
-	uint8_t len = 4;
-	can_send(dat, len);
-	
-	//uint8_t id;
-	//can_receive(&id, dat, &len);
+	uint16_t i = 0;
+	uint8_t dat[2];
+	while (1) {
+		dat[1] = i;
+		dat[0] = i >> 8;
+		can_send(dat, 2);
+		i++;
+	}
 
 	while(1);
 	return 0;

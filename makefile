@@ -2,7 +2,7 @@
 # Parameters
 #===========
 
-APPNAME     = main.elf
+APPNAME     = main
 CXX         = avr-gcc
 CXXFLAGS    = -Wall
 LIBS        = -Iinc
@@ -15,7 +15,7 @@ OFILES		= main.o can.o spi.o logger.o nodeman.o
 #===========
 
 main: $(OFILES)
-	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -o bin/$(APPNAME) $(OFILES)
+	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -o bin/$(APPNAME).elf $(OFILES)
 
 main.o: src/main.c
 	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c src/main.c $(LIBS)
