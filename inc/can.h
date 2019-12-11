@@ -16,29 +16,36 @@
 void can_init(void);
 
 /**
- * @brief Configure a message object to receive messages from a node.
- * @param id The node ID to filter messages from.
+ * @brief Configure a message object to filter on a specific message ID.
+ * @param id The message ID to filter on.
  * @return void
  *
- * Finds an unused message object and configures it to receive messages from
- * the node ID specified. Reception is enabled immediately.
+ * Finds an unused message object and configures it to filter the bus on
+ * messages with the message ID specified. Reception is enabled immediately.
  * 
  * The first message object is reserved for transmission and will not be
- * available for reception.
+ * available for reception. The transmission message object uses message ID 0
+ * and has the highest priority on the bus.
  */
 void can_filter(uint16_t id);
 
 /**
- * @brief
- * @param
- * @return
+ * @brief Retrieve a message from the first message object with a set rx flag.
+ * @param id A pointer to where the message ID will be copied.
+ * @param dat A pointer to where the message will be copied.
+ * @param len A pointer to where the mesasage length will be copied.
+ * @return void
  */
 void can_receive(uint16_t *id, uint8_t *dat, uint8_t *len);
 
 /**
- * @brief
- * @param
- * @return
+ * @brief Transmit a message on the bus.
+ * @param dat A pointer to where the message is stored.
+ * @param len The number of bytes to transmit.
+ * @return void
+ *
+ * Copies the number of bytes specified by len from the memory pointed to by
+ * dat to the transmission message object and starts transmission.
  */
 void can_transmit(uint8_t *dat, uint8_t len);
 
