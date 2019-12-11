@@ -6,12 +6,12 @@
  * @param void
  * @return void
  *
- * Resets the CAN controller, sets its transmission speed and its protocol 
- * revision (2.0A or 2.0B) for transmission, enables interrupts, clears all 
- * message objects and enables the CAN controller.
+ * Resets the CAN controller, sets its transfer speed and its protocol revision
+ * (2.0A or 2.0B) for transmission, enables interrupts, clears all message
+ * objects and enables the CAN controller.
  *
- * Currently, the transmission speed is set to 1MBps, the protocol revision is
- * 2.0A and no interrupts are enabled.
+ * Currently, the transfer speed is set to 1MBps, the protocol revision is set
+ * to 2.0A and no interrupts are enabled.
  */
 void can_init(void);
 
@@ -23,8 +23,8 @@ void can_init(void);
  * Finds an unused message object and configures it to receive messages from
  * the node ID specified. Reception is enabled immediately.
  * 
- * The first message object (MOb0) is reserved for transmitting messages and
- * will not be available for reception.
+ * The first message object is reserved for transmission and will not be
+ * available for reception.
  */
 void can_filter(uint16_t id);
 
