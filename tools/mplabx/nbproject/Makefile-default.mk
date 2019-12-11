@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../../src/can.c ../../src/logger.c ../../src/main.c ../../src/nodeman.c ../../src/spi.c
+SOURCEFILES_QUOTED_IF_SPACED=../../main.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1445274692/can.o ${OBJECTDIR}/_ext/1445274692/logger.o ${OBJECTDIR}/_ext/1445274692/main.o ${OBJECTDIR}/_ext/1445274692/nodeman.o ${OBJECTDIR}/_ext/1445274692/spi.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1445274692/can.o.d ${OBJECTDIR}/_ext/1445274692/logger.o.d ${OBJECTDIR}/_ext/1445274692/main.o.d ${OBJECTDIR}/_ext/1445274692/nodeman.o.d ${OBJECTDIR}/_ext/1445274692/spi.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/43898991/main.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/43898991/main.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1445274692/can.o ${OBJECTDIR}/_ext/1445274692/logger.o ${OBJECTDIR}/_ext/1445274692/main.o ${OBJECTDIR}/_ext/1445274692/nodeman.o ${OBJECTDIR}/_ext/1445274692/spi.o
+OBJECTFILES=${OBJECTDIR}/_ext/43898991/main.o
 
 # Source Files
-SOURCEFILES=../../src/can.c ../../src/logger.c ../../src/main.c ../../src/nodeman.c ../../src/spi.c
+SOURCEFILES=../../main.c
 
 # Pack Options 
 PACK_COMPILER_OPTIONS=-I ${DFP_DIR}/include
@@ -110,66 +110,18 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/1445274692/can.o: ../../src/can.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1445274692" 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/can.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/can.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=at90can128 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"../../inc" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/1445274692/can.o.d" -MT "${OBJECTDIR}/_ext/1445274692/can.o.d" -MT ${OBJECTDIR}/_ext/1445274692/can.o  -o ${OBJECTDIR}/_ext/1445274692/can.o ../../src/can.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1445274692/logger.o: ../../src/logger.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1445274692" 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/logger.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/logger.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=at90can128 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"../../inc" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/1445274692/logger.o.d" -MT "${OBJECTDIR}/_ext/1445274692/logger.o.d" -MT ${OBJECTDIR}/_ext/1445274692/logger.o  -o ${OBJECTDIR}/_ext/1445274692/logger.o ../../src/logger.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1445274692/main.o: ../../src/main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1445274692" 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/main.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/main.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=at90can128 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"../../inc" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/1445274692/main.o.d" -MT "${OBJECTDIR}/_ext/1445274692/main.o.d" -MT ${OBJECTDIR}/_ext/1445274692/main.o  -o ${OBJECTDIR}/_ext/1445274692/main.o ../../src/main.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1445274692/nodeman.o: ../../src/nodeman.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1445274692" 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/nodeman.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/nodeman.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=at90can128 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"../../inc" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/1445274692/nodeman.o.d" -MT "${OBJECTDIR}/_ext/1445274692/nodeman.o.d" -MT ${OBJECTDIR}/_ext/1445274692/nodeman.o  -o ${OBJECTDIR}/_ext/1445274692/nodeman.o ../../src/nodeman.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1445274692/spi.o: ../../src/spi.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1445274692" 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/spi.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/spi.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=at90can128 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"../../inc" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/1445274692/spi.o.d" -MT "${OBJECTDIR}/_ext/1445274692/spi.o.d" -MT ${OBJECTDIR}/_ext/1445274692/spi.o  -o ${OBJECTDIR}/_ext/1445274692/spi.o ../../src/spi.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+${OBJECTDIR}/_ext/43898991/main.o: ../../main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/43898991" 
+	@${RM} ${OBJECTDIR}/_ext/43898991/main.o.d 
+	@${RM} ${OBJECTDIR}/_ext/43898991/main.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=at90can128 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"../../inc" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/43898991/main.o.d" -MT "${OBJECTDIR}/_ext/43898991/main.o.d" -MT ${OBJECTDIR}/_ext/43898991/main.o  -o ${OBJECTDIR}/_ext/43898991/main.o ../../main.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 else
-${OBJECTDIR}/_ext/1445274692/can.o: ../../src/can.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1445274692" 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/can.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/can.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=at90can128 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"../../inc" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/1445274692/can.o.d" -MT "${OBJECTDIR}/_ext/1445274692/can.o.d" -MT ${OBJECTDIR}/_ext/1445274692/can.o  -o ${OBJECTDIR}/_ext/1445274692/can.o ../../src/can.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1445274692/logger.o: ../../src/logger.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1445274692" 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/logger.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/logger.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=at90can128 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"../../inc" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/1445274692/logger.o.d" -MT "${OBJECTDIR}/_ext/1445274692/logger.o.d" -MT ${OBJECTDIR}/_ext/1445274692/logger.o  -o ${OBJECTDIR}/_ext/1445274692/logger.o ../../src/logger.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1445274692/main.o: ../../src/main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1445274692" 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/main.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/main.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=at90can128 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"../../inc" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/1445274692/main.o.d" -MT "${OBJECTDIR}/_ext/1445274692/main.o.d" -MT ${OBJECTDIR}/_ext/1445274692/main.o  -o ${OBJECTDIR}/_ext/1445274692/main.o ../../src/main.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1445274692/nodeman.o: ../../src/nodeman.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1445274692" 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/nodeman.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/nodeman.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=at90can128 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"../../inc" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/1445274692/nodeman.o.d" -MT "${OBJECTDIR}/_ext/1445274692/nodeman.o.d" -MT ${OBJECTDIR}/_ext/1445274692/nodeman.o  -o ${OBJECTDIR}/_ext/1445274692/nodeman.o ../../src/nodeman.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1445274692/spi.o: ../../src/spi.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1445274692" 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/spi.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1445274692/spi.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=at90can128 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"../../inc" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/1445274692/spi.o.d" -MT "${OBJECTDIR}/_ext/1445274692/spi.o.d" -MT ${OBJECTDIR}/_ext/1445274692/spi.o  -o ${OBJECTDIR}/_ext/1445274692/spi.o ../../src/spi.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+${OBJECTDIR}/_ext/43898991/main.o: ../../main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/43898991" 
+	@${RM} ${OBJECTDIR}/_ext/43898991/main.o.d 
+	@${RM} ${OBJECTDIR}/_ext/43898991/main.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=at90can128 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"../../inc" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/_ext/43898991/main.o.d" -MT "${OBJECTDIR}/_ext/43898991/main.o.d" -MT ${OBJECTDIR}/_ext/43898991/main.o  -o ${OBJECTDIR}/_ext/43898991/main.o ../../main.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 endif
 
@@ -184,7 +136,7 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/mplabx.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mmcu=at90can128 ${PACK_COMMON_OPTIONS}  -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2 -D__$(MP_PROCESSOR_OPTION)__  -Wl,-Map="dist/${CND_CONF}/${IMAGE_TYPE}/mplabx.${IMAGE_TYPE}.map"    -o dist/${CND_CONF}/${IMAGE_TYPE}/mplabx.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}      -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1 -Wl,--gc-sections -Wl,--start-group  -Wl,-lm -Wl,--end-group 
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mmcu=at90can128 ${PACK_COMMON_OPTIONS}   -gdwarf-2 -D__$(MP_PROCESSOR_OPTION)__  -Wl,-Map="dist/${CND_CONF}/${IMAGE_TYPE}/mplabx.${IMAGE_TYPE}.map"    -o dist/${CND_CONF}/${IMAGE_TYPE}/mplabx.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}      -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__ICD2RAM=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1 -Wl,--gc-sections -Wl,--start-group  -Wl,-lm -Wl,--end-group 
 	
 	
 	

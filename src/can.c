@@ -14,7 +14,7 @@ void can_init(void) {
 	
 	// Enable interrupt(s)
 	CANIE2 = _BV(IEMOB0);
-	CANGIE = _BV(ENIT) | _BV(ENTX);
+	CANGIE = _BV(ENIT); //| _BV(ENTX) | _BV(ENRX);
 
 	// Initialize MObs
 	// CAN revision 2.0A
@@ -31,7 +31,7 @@ void can_init(void) {
 	CANGCON = _BV(ENASTB);
 }
 
-void can_filter(uint8_t id) {
+void can_filter(uint16_t id) {
     
 	uint8_t dat_i;
 	for (dat_i = 1; dat_i < 14; dat_i++) {
@@ -40,27 +40,28 @@ void can_filter(uint8_t id) {
 		CANPAGE = dat_i << 4;
 
 		// Use MOb[i] if its id is zero (i.e. not yet set)
-		if (CANIDT1 == 0x00) {
-			CANIDT1 = id;
+		if (CANIDT2 == 0x00 && CANIDT1 == 0x00) {
+			CANIDT2 = id << 5;
+			CANIDT1 = id >> 3;
 			CANCDMOB = _BV(CONMOB1);
 			break;
 		}
 	}
 }
 
-void can_receive(uint8_t *id, uint8_t *dat, uint8_t *len) {
+void can_receive(uint16_t *id, uint8_t *dat, uint8_t *len) {
 
 	uint8_t mob_i;
 	for (mob_i = 1; mob_i < 14; mob_i++) {
 
 		// Select MOb[i]
-		CANPAGE = (0xF0 & mob_i << 4);
+		CANPAGE = mob_i << 4;
 
 		// Read MOb[i] if its reception bit has been set
 		if (CANSTMOB & _BV(RXOK)) {
 
 			// Get id
-			*id = CANIDT1;
+			*id = CANIDT2 >> 5 | CANIDT1 << 3;
 
 			// Get message length
 			*len = CANCDMOB & 0x0F;
@@ -71,15 +72,15 @@ void can_receive(uint8_t *id, uint8_t *dat, uint8_t *len) {
 				*(dat+dat_i) = CANMSG;
 			}
 
-			// Reset reception bit
-			// TODO: CANCDMOB/CONMOB needed to re-enable reception?
+			// Reset reception bit and re-enable reception
 			CANSTMOB &= ~_BV(RXOK);
+			CANCDMOB = _BV(CONMOB1);
 			break;
 		}
 	}
 }
 
-void can_send(uint8_t *dat, uint8_t len) {
+void can_transmit(uint8_t *dat, uint8_t len) {
 
 	// Select MOb0
 	CANPAGE = 0x00;
@@ -94,6 +95,7 @@ void can_send(uint8_t *dat, uint8_t len) {
 	CANCDMOB = (CANCDMOB & _BV(IDE)) | _BV(CONMOB0) | (len & 0x0F);
 }
 
+/*
 ISR(CANIT_vect) {
 	
 	// Store CANPAGE
@@ -104,7 +106,14 @@ ISR(CANIT_vect) {
 	
 	// Respond to TXOK flag
 	if (CANSTMOB & _BV(TXOK)) {
-		//
+		DDRC = 0xFF;
+		PORTC = 0x01;
+	}
+	
+	// Respond to RXOK flag
+	else if (CANSTMOB & _BV(RXOK)) {
+		DDRC = 0xFF;
+		PORTC = 0x02;
 	}
 	
 	// Clear interrupt flags
@@ -113,3 +122,4 @@ ISR(CANIT_vect) {
 	// Restore CANPAGE
 	CANPAGE = page_buf;
 }
+*/

@@ -20,18 +20,18 @@ PATH:=/usr/microchip/mplabx/v5.30/mplab_platform/platform/../mplab_ide/modules/.
 # Path to java used to run MPLAB X when this makefile was created
 MP_JAVA_PATH="/usr/microchip/mplabx/v5.30/sys/java/jre1.8.0_181/bin/"
 OS_CURRENT="$(shell uname -s)"
-MP_CC="/usr/bin/avr-gcc"
-MP_CPPC="/usr/bin/avr-g++"
+MP_CC="/usr/microchip/xc8/v2.10/avr/bin/avr-gcc"
+MP_CPPC="/usr/microchip/xc8/v2.10/avr/bin/avr-g++"
 # MP_BC is not defined
-MP_AS="/usr/bin/avr-as"
-MP_LD="/usr/bin/avr-ld"
-MP_AR="/usr/bin/avr-ar"
+MP_AS="/usr/microchip/xc8/v2.10/avr/bin/avr-as"
+MP_LD="/usr/microchip/xc8/v2.10/avr/bin/avr-ld"
+MP_AR="/usr/microchip/xc8/v2.10/avr/bin/avr-ar"
 DEP_GEN=${MP_JAVA_PATH}java -jar "/usr/microchip/mplabx/v5.30/mplab_platform/platform/../mplab_ide/modules/../../bin/extractobjectdependencies.jar"
-MP_CC_DIR="/usr/bin"
-MP_CPPC_DIR="/usr/bin"
+MP_CC_DIR="/usr/microchip/xc8/v2.10/avr/bin"
+MP_CPPC_DIR="/usr/microchip/xc8/v2.10/avr/bin"
 # MP_BC_DIR is not defined
-MP_AS_DIR="/usr/bin"
-MP_LD_DIR="/usr/bin"
-MP_AR_DIR="/usr/bin"
+MP_AS_DIR="/usr/microchip/xc8/v2.10/avr/bin"
+MP_LD_DIR="/usr/microchip/xc8/v2.10/avr/bin"
+MP_AR_DIR="/usr/microchip/xc8/v2.10/avr/bin"
 # MP_BC_DIR is not defined
 DFP_DIR="/usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12"

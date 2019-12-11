@@ -7,30 +7,9 @@ Discarded input sections
 
  .data          0x0000000000000000        0x0 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
  .bss           0x0000000000000000        0x0 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
- .text          0x0000000000000000        0x0 build/default/debug/_ext/1445274692/can.o
- .data          0x0000000000000000        0x0 build/default/debug/_ext/1445274692/can.o
- .bss           0x0000000000000000        0x0 build/default/debug/_ext/1445274692/can.o
- .text          0x0000000000000000        0x0 build/default/debug/_ext/1445274692/logger.o
- .data          0x0000000000000000        0x0 build/default/debug/_ext/1445274692/logger.o
- .bss           0x0000000000000000        0x0 build/default/debug/_ext/1445274692/logger.o
- .debug_line    0x0000000000000000        0x0 build/default/debug/_ext/1445274692/logger.o
- .debug_str     0x0000000000000000      0x11c build/default/debug/_ext/1445274692/logger.o
- .comment       0x0000000000000000       0x12 build/default/debug/_ext/1445274692/logger.o
  .text          0x0000000000000000        0x0 build/default/debug/_ext/1445274692/main.o
  .data          0x0000000000000000        0x0 build/default/debug/_ext/1445274692/main.o
  .bss           0x0000000000000000        0x0 build/default/debug/_ext/1445274692/main.o
- .text          0x0000000000000000        0x0 build/default/debug/_ext/1445274692/nodeman.o
- .data          0x0000000000000000        0x0 build/default/debug/_ext/1445274692/nodeman.o
- .bss           0x0000000000000000        0x0 build/default/debug/_ext/1445274692/nodeman.o
- .debug_line    0x0000000000000000        0x0 build/default/debug/_ext/1445274692/nodeman.o
- .debug_str     0x0000000000000000      0x11d build/default/debug/_ext/1445274692/nodeman.o
- .comment       0x0000000000000000       0x12 build/default/debug/_ext/1445274692/nodeman.o
- .text          0x0000000000000000        0x0 build/default/debug/_ext/1445274692/spi.o
- .data          0x0000000000000000        0x0 build/default/debug/_ext/1445274692/spi.o
- .bss           0x0000000000000000        0x0 build/default/debug/_ext/1445274692/spi.o
- .debug_line    0x0000000000000000        0x0 build/default/debug/_ext/1445274692/spi.o
- .debug_str     0x0000000000000000      0x119 build/default/debug/_ext/1445274692/spi.o
- .comment       0x0000000000000000       0x12 build/default/debug/_ext/1445274692/spi.o
  .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
@@ -64,11 +43,7 @@ Linker script and memory map
 
 Address of section .data set to 0x800100
 LOAD /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
-LOAD build/default/debug/_ext/1445274692/can.o
-LOAD build/default/debug/_ext/1445274692/logger.o
 LOAD build/default/debug/_ext/1445274692/main.o
-LOAD build/default/debug/_ext/1445274692/nodeman.o
-LOAD build/default/debug/_ext/1445274692/spi.o
                 0x0000000000000001                __MPLAB_BUILD = 0x1
                 0x0000000000000001                __MPLAB_DEBUG = 0x1
                 0x0000000000000001                __DEBUG = 0x1
@@ -180,7 +155,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0x262
+.text           0x0000000000000000       0xe6
  *(.vectors)
  .vectors       0x0000000000000000       0x94 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
                 0x0000000000000000                __vectors
@@ -272,25 +247,13 @@ END GROUP
                 0x00000000000000a8                __vector_20
                 0x00000000000000ac                . = ALIGN (0x2)
  *(.text.*)
- .text.can_init
-                0x00000000000000ac       0xa2 build/default/debug/_ext/1445274692/can.o
-                0x00000000000000ac                can_init
- .text.can_filter
-                0x000000000000014e       0x26 build/default/debug/_ext/1445274692/can.o
-                0x000000000000014e                can_filter
- .text.can_receive
-                0x0000000000000174       0x6e build/default/debug/_ext/1445274692/can.o
-                0x0000000000000174                can_receive
- .text.can_send
-                0x00000000000001e2       0x34 build/default/debug/_ext/1445274692/can.o
-                0x00000000000001e2                can_send
- .text.main     0x0000000000000216       0x48 build/default/debug/_ext/1445274692/main.o
-                0x0000000000000216                main
-                0x000000000000025e                . = ALIGN (0x2)
+ .text.main     0x00000000000000ac       0x36 build/default/debug/_ext/1445274692/main.o
+                0x00000000000000ac                main
+                0x00000000000000e2                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000000000000025e        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
-                0x000000000000025e                exit
-                0x000000000000025e                _exit
+ .fini9         0x00000000000000e2        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
+                0x00000000000000e2                exit
+                0x00000000000000e2                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -309,17 +272,17 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000000000000025e        0x4 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
+ .fini0         0x00000000000000e2        0x4 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
  *(.fini0)
  *(.hightext)
  *(.hightext*)
  *(.progmemx.*)
-                0x0000000000000262                . = ALIGN (0x2)
+                0x00000000000000e6                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
-                0x0000000000000262                _etext = .
+                0x00000000000000e6                _etext = .
 
-.data           0x0000000000800100        0x0 load address 0x0000000000000262
+.data           0x0000000000800100        0x0 load address 0x00000000000000e6
                 [!provide]                        PROVIDE (__data_start = .)
  *(.data)
  *(.data*)
@@ -337,8 +300,8 @@ END GROUP
  *(.bss*)
  *(COMMON)
                 [!provide]                        PROVIDE (__bss_end = .)
-                0x0000000000000262                __data_load_start = LOADADDR (.data)
-                0x0000000000000262                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000000000000e6                __data_load_start = LOADADDR (.data)
+                0x00000000000000e6                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0000000000800100        0x0
                 [!provide]                        PROVIDE (__noinit_start = .)
@@ -383,9 +346,8 @@ END GROUP
 
 .comment        0x0000000000000000       0x11
  *(.comment)
- .comment       0x0000000000000000       0x11 build/default/debug/_ext/1445274692/can.o
+ .comment       0x0000000000000000       0x11 build/default/debug/_ext/1445274692/main.o
                                          0x12 (size before relaxing)
- .comment       0x0000000000000011       0x12 build/default/debug/_ext/1445274692/main.o
 
 .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x40
@@ -407,51 +369,42 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000       0x58
+.debug_aranges  0x0000000000000000       0x20
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x38 build/default/debug/_ext/1445274692/can.o
- .debug_aranges
-                0x0000000000000038       0x20 build/default/debug/_ext/1445274692/main.o
+                0x0000000000000000       0x20 build/default/debug/_ext/1445274692/main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000      0xd5c
+.debug_info     0x0000000000000000      0xb14
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0xa2d /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
- .debug_info    0x0000000000000a2d      0x1c8 build/default/debug/_ext/1445274692/can.o
- .debug_info    0x0000000000000bf5      0x167 build/default/debug/_ext/1445274692/main.o
+ .debug_info    0x0000000000000a2d       0xe7 build/default/debug/_ext/1445274692/main.o
 
-.debug_abbrev   0x0000000000000000      0xb37
+.debug_abbrev   0x0000000000000000      0xa37
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x9a0 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
- .debug_abbrev  0x00000000000009a0       0xd8 build/default/debug/_ext/1445274692/can.o
- .debug_abbrev  0x0000000000000a78       0xbf build/default/debug/_ext/1445274692/main.o
+ .debug_abbrev  0x00000000000009a0       0x97 build/default/debug/_ext/1445274692/main.o
 
-.debug_line     0x0000000000000000      0x768
+.debug_line     0x0000000000000000      0x2e6
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x175 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
- .debug_line    0x0000000000000175      0x51a build/default/debug/_ext/1445274692/can.o
- .debug_line    0x000000000000068f       0xd9 build/default/debug/_ext/1445274692/main.o
+ .debug_line    0x0000000000000175      0x171 build/default/debug/_ext/1445274692/main.o
 
-.debug_frame    0x0000000000000000       0xb8
+.debug_frame    0x0000000000000000       0x24
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0x8c build/default/debug/_ext/1445274692/can.o
- .debug_frame   0x000000000000008c       0x2c build/default/debug/_ext/1445274692/main.o
+ .debug_frame   0x0000000000000000       0x24 build/default/debug/_ext/1445274692/main.o
 
-.debug_str      0x0000000000000000      0x547
+.debug_str      0x0000000000000000      0x515
  *(.debug_str)
  .debug_str     0x0000000000000000      0x39f /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
- .debug_str     0x000000000000039f      0x192 build/default/debug/_ext/1445274692/can.o
-                                        0x1c6 (size before relaxing)
- .debug_str     0x0000000000000531       0x16 build/default/debug/_ext/1445274692/main.o
-                                        0x1b7 (size before relaxing)
+ .debug_str     0x000000000000039f      0x176 build/default/debug/_ext/1445274692/main.o
+                                        0x1aa (size before relaxing)
 
-.debug_loc      0x0000000000000000      0x215
+.debug_loc      0x0000000000000000       0xb0
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x1e7 build/default/debug/_ext/1445274692/can.o
- .debug_loc     0x00000000000001e7       0x2e build/default/debug/_ext/1445274692/main.o
+ .debug_loc     0x0000000000000000       0xb0 build/default/debug/_ext/1445274692/main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -471,10 +424,9 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000       0x38
+.debug_ranges   0x0000000000000000       0x10
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x28 build/default/debug/_ext/1445274692/can.o
- .debug_ranges  0x0000000000000028       0x10 build/default/debug/_ext/1445274692/main.o
+ .debug_ranges  0x0000000000000000       0x10 build/default/debug/_ext/1445274692/main.o
 
 .debug_macro
  *(.debug_macro)

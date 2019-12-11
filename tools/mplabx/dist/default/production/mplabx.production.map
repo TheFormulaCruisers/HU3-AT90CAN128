@@ -1,85 +1,68 @@
 Archive member included to satisfy reference by file (symbol)
 
-/usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
+/usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/avr51/libgcc.a(_exit.o)
                               /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o (exit)
 
 Discarded input sections
 
- .data          0x0000000000000000        0x0 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
- .bss           0x0000000000000000        0x0 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
- .text          0x0000000000000000        0x0 build/default/production/_ext/1445274692/can.o
- .data          0x0000000000000000        0x0 build/default/production/_ext/1445274692/can.o
- .bss           0x0000000000000000        0x0 build/default/production/_ext/1445274692/can.o
- .text          0x0000000000000000        0x0 build/default/production/_ext/1445274692/logger.o
- .data          0x0000000000000000        0x0 build/default/production/_ext/1445274692/logger.o
- .bss           0x0000000000000000        0x0 build/default/production/_ext/1445274692/logger.o
- .comment       0x0000000000000000       0x12 build/default/production/_ext/1445274692/logger.o
- .text          0x0000000000000000        0x0 build/default/production/_ext/1445274692/main.o
- .data          0x0000000000000000        0x0 build/default/production/_ext/1445274692/main.o
- .bss           0x0000000000000000        0x0 build/default/production/_ext/1445274692/main.o
- .text          0x0000000000000000        0x0 build/default/production/_ext/1445274692/nodeman.o
- .data          0x0000000000000000        0x0 build/default/production/_ext/1445274692/nodeman.o
- .bss           0x0000000000000000        0x0 build/default/production/_ext/1445274692/nodeman.o
- .comment       0x0000000000000000       0x12 build/default/production/_ext/1445274692/nodeman.o
- .text          0x0000000000000000        0x0 build/default/production/_ext/1445274692/spi.o
- .data          0x0000000000000000        0x0 build/default/production/_ext/1445274692/spi.o
- .bss           0x0000000000000000        0x0 build/default/production/_ext/1445274692/spi.o
- .comment       0x0000000000000000       0x12 build/default/production/_ext/1445274692/spi.o
- .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
- .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
- .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
+ .data          0x00000000        0x0 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
+ .bss           0x00000000        0x0 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
+ .text          0x00000000        0x0 build/default/production/_ext/43898991/main.o
+ .data          0x00000000        0x0 build/default/production/_ext/43898991/main.o
+ .bss           0x00000000        0x0 build/default/production/_ext/43898991/main.o
+ .text          0x00000000        0x0 /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/avr51/libgcc.a(_exit.o)
+ .data          0x00000000        0x0 /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/avr51/libgcc.a(_exit.o)
+ .bss           0x00000000        0x0 /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/avr51/libgcc.a(_exit.o)
  .text.libgcc.mul
-                0x0000000000000000        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
+                0x00000000        0x0 /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/avr51/libgcc.a(_exit.o)
  .text.libgcc.div
-                0x0000000000000000        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
- .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
+                0x00000000        0x0 /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/avr51/libgcc.a(_exit.o)
+ .text.libgcc   0x00000000        0x0 /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/avr51/libgcc.a(_exit.o)
  .text.libgcc.prologue
-                0x0000000000000000        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
+                0x00000000        0x0 /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/avr51/libgcc.a(_exit.o)
  .text.libgcc.builtins
-                0x0000000000000000        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
+                0x00000000        0x0 /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/avr51/libgcc.a(_exit.o)
  .text.libgcc.fmul
-                0x0000000000000000        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
+                0x00000000        0x0 /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/avr51/libgcc.a(_exit.o)
  .text.libgcc.fixed
-                0x0000000000000000        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
+                0x00000000        0x0 /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/avr51/libgcc.a(_exit.o)
 
 Memory Configuration
 
 Name             Origin             Length             Attributes
-text             0x0000000000000000 0x0000000000020000 xr
-data             0x0000000000800100 0x0000000000001000 rw !x
-eeprom           0x0000000000810000 0x0000000000001000 rw !x
-fuse             0x0000000000820000 0x0000000000000003 rw !x
-lock             0x0000000000830000 0x0000000000000400 rw !x
-signature        0x0000000000840000 0x0000000000000400 rw !x
-user_signatures  0x0000000000850000 0x0000000000000400 rw !x
-*default*        0x0000000000000000 0xffffffffffffffff
+text             0x00000000         0x00020000         xr
+data             0x00800100         0x00001000         rw !x
+eeprom           0x00810000         0x00001000         rw !x
+fuse             0x00820000         0x00000003         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+user_signatures  0x00850000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
 
 Linker script and memory map
 
 Address of section .data set to 0x800100
 LOAD /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
-LOAD build/default/production/_ext/1445274692/can.o
-LOAD build/default/production/_ext/1445274692/logger.o
-LOAD build/default/production/_ext/1445274692/main.o
-LOAD build/default/production/_ext/1445274692/nodeman.o
-LOAD build/default/production/_ext/1445274692/spi.o
-                0x0000000000000001                __MPLAB_BUILD = 0x1
+LOAD build/default/production/_ext/43898991/main.o
+                0x00000001                __MPLAB_BUILD = 0x1
 START GROUP
-LOAD /usr/lib/gcc/avr/9.2.0/../../../../avr/lib/avr51/libm.a
+LOAD /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51/libm.a
 END GROUP
 START GROUP
-LOAD /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a
-LOAD /usr/lib/gcc/avr/9.2.0/../../../../avr/lib/avr51/libm.a
-LOAD /usr/lib/gcc/avr/9.2.0/../../../../avr/lib/avr51/libc.a
+LOAD /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/avr51/libgcc.a
+LOAD /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51/libm.a
+LOAD /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51/libc.a
 LOAD /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/libat90can128.a
 END GROUP
-                [0x0000000000020000]                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
-                [0x0000000000001000]                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xff00
-                [0x0000000000001000]                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
-                [0x0000000000000003]                __FUSE_REGION_LENGTH__ = DEFINED (__FUSE_REGION_LENGTH__)?__FUSE_REGION_LENGTH__:0x400
-                0x0000000000000400                __LOCK_REGION_LENGTH__ = DEFINED (__LOCK_REGION_LENGTH__)?__LOCK_REGION_LENGTH__:0x400
-                0x0000000000000400                __SIGNATURE_REGION_LENGTH__ = DEFINED (__SIGNATURE_REGION_LENGTH__)?__SIGNATURE_REGION_LENGTH__:0x400
-                0x0000000000000400                __USER_SIGNATURE_REGION_LENGTH__ = DEFINED (__USER_SIGNATURE_REGION_LENGTH__)?__USER_SIGNATURE_REGION_LENGTH__:0x400
+                0x00000000                __TEXT_REGION_ORIGIN__ = DEFINED (__TEXT_REGION_ORIGIN__)?__TEXT_REGION_ORIGIN__:0x0
+                [0x00800100]                __DATA_REGION_ORIGIN__ = DEFINED (__DATA_REGION_ORIGIN__)?__DATA_REGION_ORIGIN__:0x800100
+                [0x00020000]                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
+                [0x00001000]                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xff00
+                [0x00001000]                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
+                [0x00000003]                __FUSE_REGION_LENGTH__ = DEFINED (__FUSE_REGION_LENGTH__)?__FUSE_REGION_LENGTH__:0x400
+                0x00000400                __LOCK_REGION_LENGTH__ = DEFINED (__LOCK_REGION_LENGTH__)?__LOCK_REGION_LENGTH__:0x400
+                0x00000400                __SIGNATURE_REGION_LENGTH__ = DEFINED (__SIGNATURE_REGION_LENGTH__)?__SIGNATURE_REGION_LENGTH__:0x400
+                0x00000400                __USER_SIGNATURE_REGION_LENGTH__ = DEFINED (__USER_SIGNATURE_REGION_LENGTH__)?__USER_SIGNATURE_REGION_LENGTH__:0x400
 
 .hash
  *(.hash)
@@ -171,176 +154,111 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0x262
+.text           0x00000000       0xac
  *(.vectors)
- .vectors       0x0000000000000000       0x94 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
-                0x0000000000000000                __vectors
-                0x0000000000000000                __vector_default
+ .vectors       0x00000000       0x94 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
  *(.vectors)
  *(.progmem.gcc*)
-                0x0000000000000094                . = ALIGN (0x2)
-                0x0000000000000094                __trampolines_start = .
+ *(.dinit)
+ .dinit         0x00000094        0x0 data_init
+                0x00000094                . = ALIGN (0x2)
+                0x00000094                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x0000000000000094        0x0 linker stubs
+ .trampolines   0x00000094        0x0 linker stubs
  *(.trampolines*)
-                0x0000000000000094                __trampolines_end = .
+                0x00000094                __trampolines_end = .
  *libprintf_flt.a:*(.progmem.data)
  *libc.a:*(.progmem.data)
- *(.progmem.*)
-                0x0000000000000094                . = ALIGN (0x2)
- *(.lowtext)
- *(.lowtext*)
-                0x0000000000000094                __ctors_start = .
- *(.ctors)
-                0x0000000000000094                __ctors_end = .
-                0x0000000000000094                __dtors_start = .
- *(.dtors)
-                0x0000000000000094                __dtors_end = .
- SORT_BY_NAME(*)(.ctors)
- SORT_BY_NAME(*)(.dtors)
- *(.init0)
- .init0         0x0000000000000094        0x0 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
-                0x0000000000000094                __init
- *(.init0)
- *(.init1)
- *(.init1)
- *(.init2)
- .init2         0x0000000000000094        0xc /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
- *(.init2)
- *(.init3)
- *(.init3)
- *(.init4)
- *(.init4)
- *(.init5)
- *(.init5)
- *(.init6)
- *(.init6)
- *(.init7)
- *(.init7)
- *(.init8)
- *(.init8)
- *(.init9)
- .init9         0x00000000000000a0        0x8 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
- *(.init9)
- *(.text)
- .text          0x00000000000000a8        0x4 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
-                0x00000000000000a8                __vector_22
-                0x00000000000000a8                __vector_28
-                0x00000000000000a8                __vector_1
-                0x00000000000000a8                __vector_32
-                0x00000000000000a8                __vector_34
-                0x00000000000000a8                __vector_24
-                0x00000000000000a8                __vector_12
-                0x00000000000000a8                __bad_interrupt
-                0x00000000000000a8                __vector_6
-                0x00000000000000a8                __vector_31
-                0x00000000000000a8                __vector_35
-                0x00000000000000a8                __vector_3
-                0x00000000000000a8                __vector_23
-                0x00000000000000a8                __vector_30
-                0x00000000000000a8                __vector_25
-                0x00000000000000a8                __vector_11
-                0x00000000000000a8                __vector_13
-                0x00000000000000a8                __vector_17
-                0x00000000000000a8                __vector_19
-                0x00000000000000a8                __vector_7
-                0x00000000000000a8                __vector_27
-                0x00000000000000a8                __vector_5
-                0x00000000000000a8                __vector_33
-                0x00000000000000a8                __vector_4
-                0x00000000000000a8                __vector_9
-                0x00000000000000a8                __vector_2
-                0x00000000000000a8                __vector_21
-                0x00000000000000a8                __vector_15
-                0x00000000000000a8                __vector_36
-                0x00000000000000a8                __vector_29
-                0x00000000000000a8                __vector_8
-                0x00000000000000a8                __vector_26
-                0x00000000000000a8                __vector_14
-                0x00000000000000a8                __vector_10
-                0x00000000000000a8                __vector_16
-                0x00000000000000a8                __vector_18
-                0x00000000000000a8                __vector_20
-                0x00000000000000ac                . = ALIGN (0x2)
- *(.text.*)
- .text.can_init
-                0x00000000000000ac       0xa2 build/default/production/_ext/1445274692/can.o
-                0x00000000000000ac                can_init
- .text.can_filter
-                0x000000000000014e       0x26 build/default/production/_ext/1445274692/can.o
-                0x000000000000014e                can_filter
- .text.can_receive
-                0x0000000000000174       0x6e build/default/production/_ext/1445274692/can.o
-                0x0000000000000174                can_receive
- .text.can_send
-                0x00000000000001e2       0x34 build/default/production/_ext/1445274692/can.o
-                0x00000000000001e2                can_send
- .text.main     0x0000000000000216       0x48 build/default/production/_ext/1445274692/main.o
-                0x0000000000000216                main
-                0x000000000000025e                . = ALIGN (0x2)
- *(.fini9)
- .fini9         0x000000000000025e        0x0 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
-                0x000000000000025e                exit
-                0x000000000000025e                _exit
- *(.fini9)
- *(.fini8)
- *(.fini8)
- *(.fini7)
- *(.fini7)
- *(.fini6)
- *(.fini6)
- *(.fini5)
- *(.fini5)
- *(.fini4)
- *(.fini4)
- *(.fini3)
- *(.fini3)
- *(.fini2)
- *(.fini2)
- *(.fini1)
- *(.fini1)
- *(.fini0)
- .fini0         0x000000000000025e        0x4 /usr/lib/gcc/avr/9.2.0/avr51/libgcc.a(_exit.o)
- *(.fini0)
- *(.hightext)
- *(.hightext*)
- *(.progmemx.*)
-                0x0000000000000262                . = ALIGN (0x2)
+                0x00000094                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
-                0x0000000000000262                _etext = .
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000094                __ctors_start = .
+ *(.ctors)
+                0x00000094                __ctors_end = .
+                0x00000094                __dtors_start = .
+ *(.dtors)
+                0x00000094                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000094        0x0 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
+                0x00000094                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000094        0xc /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x000000a0        0x8 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
+ *(.init9)
+                0x000000a8                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x000000a8        0x0 /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/avr51/libgcc.a(_exit.o)
+                0x000000a8                exit
+                0x000000a8                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x000000a8        0x4 /usr/microchip/xc8/v2.10/avr/bin/../lib/gcc/avr/5.4.0/avr51/libgcc.a(_exit.o)
+ *(.fini0)
+                0x000000ac                _etext = .
 
-.data           0x0000000000800100        0x0 load address 0x0000000000000262
-                [!provide]                        PROVIDE (__data_start = .)
- *(.data)
- *(.data*)
+.data           0x00800100        0x0 load address 0x000000ac
+                [!provide]                PROVIDE (__data_start, .)
  *(.gnu.linkonce.d*)
- *(.rodata)
- *(.rodata*)
  *(.gnu.linkonce.r*)
-                0x0000000000800100                . = ALIGN (0x2)
-                0x0000000000800100                _edata = .
-                [!provide]                        PROVIDE (__data_end = .)
+                0x00800100                . = ALIGN (0x2)
+                0x00800100                _edata = .
+                [!provide]                PROVIDE (__data_end, .)
 
-.bss            0x0000000000800100        0x0
-                [!provide]                        PROVIDE (__bss_start = .)
- *(.bss)
- *(.bss*)
+.bss            0x00800100        0x0
+                [!provide]                PROVIDE (__bss_start, .)
  *(COMMON)
-                [!provide]                        PROVIDE (__bss_end = .)
-                0x0000000000000262                __data_load_start = LOADADDR (.data)
-                0x0000000000000262                __data_load_end = (__data_load_start + SIZEOF (.data))
+                [!provide]                PROVIDE (__bss_end, .)
+                0x000000ac                __data_load_start = LOADADDR (.data)
+                0x000000ac                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0000000000800100        0x0
-                [!provide]                        PROVIDE (__noinit_start = .)
+.noinit         0x00800100        0x0
+                [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                [!provide]                        PROVIDE (__noinit_end = .)
-                0x0000000000800100                _end = .
-                [!provide]                        PROVIDE (__heap_start = .)
+                [!provide]                PROVIDE (__noinit_end, .)
+                0x00800100                _end = .
 
-.eeprom         0x0000000000810000        0x0
+.eeprom         0x00810000        0x0
  *(.eeprom*)
-                0x0000000000810000                __eeprom_end = .
+                0x00810000                __eeprom_end = .
 
 .fuse
  *(.fuse)
@@ -353,6 +271,9 @@ END GROUP
 
 .signature
  *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
 
 .stab
  *(.stab)
@@ -372,16 +293,10 @@ END GROUP
 .stab.indexstr
  *(.stab.indexstr)
 
-.comment        0x0000000000000000       0x11
+.comment        0x00000000       0x2f
  *(.comment)
- .comment       0x0000000000000000       0x11 build/default/production/_ext/1445274692/can.o
-                                         0x12 (size before relaxing)
- .comment       0x0000000000000011       0x12 build/default/production/_ext/1445274692/main.o
-
-.note.gnu.avr.deviceinfo
-                0x0000000000000000       0x40
- .note.gnu.avr.deviceinfo
-                0x0000000000000000       0x40 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
+ .comment       0x00000000       0x2f build/default/production/_ext/43898991/main.o
+                                 0x30 (size before relaxing)
 
 .note.gnu.build-id
  *(.note.gnu.build-id)
@@ -404,24 +319,24 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000      0xa2d
+.debug_info     0x00000000      0xa2d
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x0000000000000000      0xa2d /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
+ .debug_info    0x00000000      0xa2d /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
 
-.debug_abbrev   0x0000000000000000      0x9a0
+.debug_abbrev   0x00000000      0x9a0
  *(.debug_abbrev)
- .debug_abbrev  0x0000000000000000      0x9a0 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
+ .debug_abbrev  0x00000000      0x9a0 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
 
-.debug_line     0x0000000000000000      0x175
+.debug_line     0x00000000      0x175
  *(.debug_line .debug_line.* .debug_line_end)
- .debug_line    0x0000000000000000      0x175 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
+ .debug_line    0x00000000      0x175 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
 
 .debug_frame
  *(.debug_frame)
 
-.debug_str      0x0000000000000000      0x39f
+.debug_str      0x00000000      0x39f
  *(.debug_str)
- .debug_str     0x0000000000000000      0x39f /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
+ .debug_str     0x00000000      0x39f /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
 
 .debug_loc
  *(.debug_loc)
@@ -449,8 +364,55 @@ END GROUP
 
 .debug_macro
  *(.debug_macro)
-
-.debug_addr
- *(.debug_addr)
 OUTPUT(dist/default/production/mplabx.production.elf elf32-avr)
 LOAD linker stubs
+LOAD data_init
+
+.note.gnu.avr.deviceinfo
+                0x00000000       0x40
+ .note.gnu.avr.deviceinfo
+                0x00000000       0x40 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
+
+.text.main      0x000000ac       0x38
+ .text.main     0x000000ac       0x38 build/default/production/_ext/43898991/main.o
+                0x000000ac                main
+
+.text           0x000000e4        0x4
+ .text          0x000000e4        0x4 /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/gcc/dev/at90can128/avr51/crtat90can128.o
+                0x000000e4                __vector_22
+                0x000000e4                __vector_28
+                0x000000e4                __vector_1
+                0x000000e4                __vector_32
+                0x000000e4                __vector_34
+                0x000000e4                __vector_24
+                0x000000e4                __vector_12
+                0x000000e4                __bad_interrupt
+                0x000000e4                __vector_6
+                0x000000e4                __vector_31
+                0x000000e4                __vector_35
+                0x000000e4                __vector_3
+                0x000000e4                __vector_23
+                0x000000e4                __vector_30
+                0x000000e4                __vector_25
+                0x000000e4                __vector_11
+                0x000000e4                __vector_13
+                0x000000e4                __vector_17
+                0x000000e4                __vector_19
+                0x000000e4                __vector_7
+                0x000000e4                __vector_27
+                0x000000e4                __vector_5
+                0x000000e4                __vector_33
+                0x000000e4                __vector_4
+                0x000000e4                __vector_9
+                0x000000e4                __vector_2
+                0x000000e4                __vector_21
+                0x000000e4                __vector_15
+                0x000000e4                __vector_36
+                0x000000e4                __vector_29
+                0x000000e4                __vector_8
+                0x000000e4                __vector_26
+                0x000000e4                __vector_14
+                0x000000e4                __vector_10
+                0x000000e4                __vector_16
+                0x000000e4                __vector_18
+                0x000000e4                __vector_20

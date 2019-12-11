@@ -4,10 +4,6 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>../../inc/can.h</itemPath>
-      <itemPath>../../inc/logger.h</itemPath>
-      <itemPath>../../inc/nodeman.h</itemPath>
-      <itemPath>../../inc/spi.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -16,11 +12,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>../../src/can.c</itemPath>
-      <itemPath>../../src/logger.c</itemPath>
-      <itemPath>../../src/main.c</itemPath>
-      <itemPath>../../src/nodeman.c</itemPath>
-      <itemPath>../../src/spi.c</itemPath>
+      <itemPath>../../main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -39,9 +31,9 @@
         <targetDevice>AT90CAN128</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>Simulator</platformTool>
+        <platformTool>snap</platformTool>
         <languageToolchain>AVR</languageToolchain>
-        <languageToolchainVersion>1.00</languageToolchainVersion>
+        <languageToolchainVersion>5.4.0</languageToolchainVersion>
         <platform>2</platform>
       </toolsSet>
       <packs>
@@ -619,8 +611,6 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-ffff"/>
-        <property key="programmerToGoFilePath"
-                  value="/home/rogvis/Documents/School/Haagse Hogeschool/2019-2020/Stage 2/Software/HU3/C3/tools/mplabx/debug/default/default_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>

@@ -6,8 +6,7 @@ build/default/debug/_ext/1445274692/main.o.d \
  /usr/microchip/mplabx/v5.30/packs/Microchip/ATmega_DFP/2.0.12/include/avr/iocan128.h \
  /usr/avr/include/avr/portpins.h /usr/avr/include/avr/common.h \
  /usr/avr/include/avr/version.h /usr/avr/include/avr/fuse.h \
- /usr/avr/include/avr/lock.h /usr/avr/include/avr/interrupt.h \
- ../../inc/can.h ../../inc/logger.h ../../inc/nodeman.h ../../inc/spi.h
+ /usr/avr/include/avr/lock.h /usr/avr/include/avr/interrupt.h
 
 /usr/avr/include/avr/io.h:
 
@@ -32,11 +31,3 @@ build/default/debug/_ext/1445274692/main.o.d \
 /usr/avr/include/avr/lock.h:
 
 /usr/avr/include/avr/interrupt.h:
-
-../../inc/can.h:
-
-../../inc/logger.h:
-
-../../inc/nodeman.h:
-
-../../inc/spi.h:
