@@ -32,7 +32,7 @@ void can_init(void);
  * way, the receive function will always favor a high priority message over a
  * low priority message.
  *
- * @bug currently, filtered messages with an id of 0 are discarded when also
+ * @bug Currently, filtered messages with an id of 0 are discarded when also
  * filtering for messages with higher ids, since an id of 0 indicates that the
  * message object is not initialized.
  */
