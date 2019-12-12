@@ -32,8 +32,8 @@ void can_init(void);
  * way, the receive function will always favor a high priority message over a
  * low priority message.
  *
- * Bug: currently, one is not able to filter messages with an id of 0 when
- * filtering for messages with higher ids, since an empty id indicates that the
+ * @bug currently, filtered messages with an id of 0 are discarded when also
+ * filtering for messages with higher ids, since an id of 0 indicates that the
  * message object is not initialized.
  */
 void can_filter(uint16_t id);
