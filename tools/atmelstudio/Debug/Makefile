@@ -34,6 +34,7 @@ LINKER_SCRIPT_DEP:=
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
 ../inc \
+../tests \
 ../src
 
 
@@ -43,7 +44,9 @@ C_SRCS +=  \
 ../../../src/logger.c \
 ../../../src/main.c \
 ../../../src/nodeman.c \
-../../../src/spi.c
+../../../src/spi.c \
+../../../tests/can_rx.c \
+../../../tests/can_tx.c
 
 
 PREPROCESSING_SRCS += 
@@ -57,28 +60,36 @@ src/can.o \
 src/logger.o \
 src/main.o \
 src/nodeman.o \
-src/spi.o
+src/spi.o \
+tests/can_rx.o \
+tests/can_tx.o
 
 OBJS_AS_ARGS +=  \
 src/can.o \
 src/logger.o \
 src/main.o \
 src/nodeman.o \
-src/spi.o
+src/spi.o \
+tests/can_rx.o \
+tests/can_tx.o
 
 C_DEPS +=  \
 src/can.d \
 src/logger.d \
 src/main.d \
 src/nodeman.d \
-src/spi.d
+src/spi.d \
+tests/can_rx.d \
+tests/can_tx.d
 
 C_DEPS_AS_ARGS +=  \
 src/can.d \
 src/logger.d \
 src/main.d \
 src/nodeman.d \
-src/spi.d
+src/spi.d \
+tests/can_rx.d \
+tests/can_tx.d
 
 OUTPUT_FILE_PATH +=atmelstudio.elf
 
@@ -123,6 +134,20 @@ src/nodeman.o: ../../../src/nodeman.c
 	
 
 src/spi.o: ../../../src/spi.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../../../inc" -I"../inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=at90can128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\at90can128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+tests/can_rx.o: ../../../tests/can_rx.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../../../inc" -I"../inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=at90can128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\at90can128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+tests/can_tx.o: ../../../tests/can_tx.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../../../inc" -I"../inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=at90can128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\at90can128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

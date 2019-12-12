@@ -1,11 +1,3 @@
-/*
-  _  _ _   _    ____   ___ ____
- | || | | | |__|__ /  / __|__ /
- | __ | |_| |___|_ \ | (__ |_ \
- |_||_|\___/   |___/  \___|___/
-
-*/
-
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
@@ -14,7 +6,7 @@
 #include <nodeman.h>
 #include <spi.h>
 
-int main(void) {
+int can_test_tx(void) {
 	
 	can_init();
 	sei();
@@ -28,18 +20,17 @@ int main(void) {
 	
 	while (1) {
 		
-		dat[0] = leds; 
 		can_transmit(dat, 1);
 		
 		for (ledi = 0; ledi < duration; ledi++);
 		if (leds == 0x80) {
 			dir = 1;
-			} else if (leds == 0x01) {
+		} else if (leds == 0x01) {
 			dir = 0;
 		}
 		if (dir) {
 			leds >>= 1;
-			} else {
+		} else {
 			leds <<= 1;
 		}
 		PORTC = leds;

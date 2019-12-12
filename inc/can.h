@@ -20,12 +20,21 @@ void can_init(void);
  * @param id The message ID to filter on.
  * @return void
  *
- * Finds an unused message object and configures it to filter the bus on
- * messages with the message ID specified. Reception is enabled immediately.
+ * Searches for an unused message object and configures it to filter the bus on
+ * messages with the message ID specified. Message objects are utilized
+ * chronologically and reception is enabled immediately.
  * 
  * The first message object is reserved for transmission and will not be
  * available for reception. The transmission message object uses message ID 0
  * and has the highest priority on the bus.
+ *
+ * Best practice is to filter messages in descending order of priority. That
+ * way, the receive function will always favor a high priority message over a
+ * low priority message.
+ *
+ * Bug: currently, one is not able to filter messages with an id of 0 when
+ * filtering for messages with higher ids, since an empty id indicates that the
+ * message object is not initialized.
  */
 void can_filter(uint16_t id);
 
@@ -33,8 +42,14 @@ void can_filter(uint16_t id);
  * @brief Retrieve a message from the first message object with a set rx flag.
  * @param id A pointer to where the message ID will be copied.
  * @param dat A pointer to where the message will be copied.
- * @param len A pointer to where the mesasage length will be copied.
+ * @param len A pointer to where the message length will be copied.
  * @return void
+ *
+ * Searches through all the message objects and returns the message of the
+ * first one it finds with a set reception flag. The id, message and message
+ * length of the message object are then copied to the respective memory
+ * locations pointed to by the function's parameters. Make sure to reserve
+ * enough memory at these memory locations.
  */
 void can_receive(uint16_t *id, uint8_t *dat, uint8_t *len);
 

@@ -12,3 +12,7 @@
 
 ..\..\src\spi.c
 
+..\..\tests\can_rx.c
+
+..\..\tests\can_tx.c
+

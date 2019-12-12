@@ -163,6 +163,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="inc" />
+    <Folder Include="tests" />
     <Folder Include="src" />
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +202,14 @@
     <Compile Include="..\..\src\spi.c">
       <SubType>compile</SubType>
       <Link>src\spi.c</Link>
+    </Compile>
+    <Compile Include="..\..\tests\can_rx.c">
+      <SubType>compile</SubType>
+      <Link>tests\can_rx.c</Link>
+    </Compile>
+    <Compile Include="..\..\tests\can_tx.c">
+      <SubType>compile</SubType>
+      <Link>tests\can_tx.c</Link>
     </Compile>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
