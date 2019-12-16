@@ -8,7 +8,7 @@
 
 int can_test_tx(void) {
 	
-	can_init();
+	can_init(0);
 	sei();
 
 	uint8_t dat[8] = {0xAA};

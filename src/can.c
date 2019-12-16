@@ -2,7 +2,22 @@
 #include <avr/interrupt.h>
 #include <can.h>
 
-void can_init(void) {
+// Convert an ID to the CAN revision 2.0A IDT-register format.
+static uint32_t _id_to_idt_2a(uint16_t id) {
+	return
+		(uint32_t)(uint8_t)(id << 5) << 16 | 
+		(uint32_t)(uint8_t)(id >> 3) << 24;
+}
+
+// Convert an ID to the CAN revision 2.0B IDT-register format.
+static uint32_t _id_to_idt_2b(uint16_t id) {
+	return
+		(uint32_t)(uint8_t)(id << 3) | 
+		(uint32_t)(uint8_t)(id >> 5) << 8 |
+		(uint32_t)(uint8_t)(id >> 13) << 16;
+}
+
+void can_init(uint16_t id) {
 	
 	// Reset CAN controller
 	CANGCON = _BV(SWRES);
@@ -14,12 +29,19 @@ void can_init(void) {
 	
 	// Enable interrupt(s)
 	CANIE2 = _BV(IEMOB0);
-	CANGIE = _BV(ENIT); //| _BV(ENTX) | _BV(ENRX);
+	CANGIE = _BV(ENIT);
 
-	// Initialize MObs
+	// Initialize MOb0 (tx)
+	CANPAGE = 0x00;
+	CANSTMOB = 0x00;
+	CANCDMOB = 0x00;
+	CANIDM = 0xFFFFFFFF;
+	CANIDT = _id_to_idt_2a(id);
+
+	// Initialize MOb1 to MOb14 (rx)
 	// CAN revision 2.0A
 	uint8_t dat_i;
-	for (dat_i = 0; dat_i < 14; dat_i++) {
+	for (dat_i = 1; dat_i < 14; dat_i++) {
 		CANPAGE = dat_i << 4;
 		CANSTMOB = 0x00;
 		CANCDMOB = 0x00;
@@ -40,9 +62,8 @@ void can_filter(uint16_t id) {
 		CANPAGE = dat_i << 4;
 
 		// Use MOb[i] if its id is zero (i.e. not yet set)
-		if (CANIDT2 == 0x00 && CANIDT1 == 0x00) {
-			CANIDT2 = id << 5;
-			CANIDT1 = id >> 3;
+		if (CANIDT == 0x00000000) {
+			CANIDT = _id_to_idt_2a(id);
 			CANCDMOB = _BV(CONMOB1);
 			break;
 		}
@@ -94,32 +115,3 @@ void can_transmit(uint8_t *dat, uint8_t len) {
 	// Set message length and start transmission
 	CANCDMOB = (CANCDMOB & _BV(IDE)) | _BV(CONMOB0) | (len & 0x0F);
 }
-
-/*
-ISR(CANIT_vect) {
-	
-	// Store CANPAGE
-	uint8_t page_buf = CANPAGE;
-
-	// Select MOb0
-	CANPAGE = 0x00;
-	
-	// Respond to TXOK flag
-	if (CANSTMOB & _BV(TXOK)) {
-		DDRC = 0xFF;
-		PORTC = 0x01;
-	}
-	
-	// Respond to RXOK flag
-	else if (CANSTMOB & _BV(RXOK)) {
-		DDRC = 0xFF;
-		PORTC = 0x02;
-	}
-	
-	// Clear interrupt flags
-	CANSTMOB = 0x00;
-	
-	// Restore CANPAGE
-	CANPAGE = page_buf;
-}
-*/

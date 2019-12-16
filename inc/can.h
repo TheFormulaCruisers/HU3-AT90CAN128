@@ -3,7 +3,7 @@
 
 /**
  * @brief Initialize the CAN controller.
- * @param void
+ * @param id The message ID used for transmission.
  * @return void
  *
  * Resets the CAN controller, sets its transfer speed and its protocol revision
@@ -13,7 +13,7 @@
  * Currently, the transfer speed is set to 1MBps, the protocol revision is set
  * to 2.0A and no interrupts are enabled.
  */
-void can_init(void);
+void can_init(uint16_t id);
 
 /**
  * @brief Configure a message object to filter on a specific message ID.
