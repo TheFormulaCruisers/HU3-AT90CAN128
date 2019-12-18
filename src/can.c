@@ -28,7 +28,6 @@ void can_init(uint16_t txid) {
 	CANBT3 = 0x13;
 
 	// Enable interrupt(s)
-	CANIE2 = _BV(IEMOB0);
 	CANGIE = _BV(ENIT);
 
 	// Initialize MOb0 (tx)
