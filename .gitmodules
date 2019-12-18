@@ -1,0 +1,3 @@
+[submodule "libs/libcan"]
+	path = libs/libcan
+	url = https://github.com/TheFormulaCruisers/libcan.git
