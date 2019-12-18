@@ -8,7 +8,7 @@
 
 int can_test_rx(void) {
 	
-	can_init(0);
+	can_init(2);
 	can_filter(0);
 	sei();
 

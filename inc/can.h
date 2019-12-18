@@ -3,7 +3,7 @@
 
 /**
  * @brief Initialize the CAN controller.
- * @param id The message ID used for transmission.
+ * @param txid The message ID used for transmission.
  * @return void
  *
  * Resets the CAN controller, sets its transfer speed and its protocol revision
@@ -13,11 +13,11 @@
  * Currently, the transfer speed is set to 1MBps, the protocol revision is set
  * to 2.0A and no interrupts are enabled.
  */
-void can_init(uint16_t id);
+void can_init(uint16_t txid);
 
 /**
  * @brief Configure a message object to filter on a specific message ID.
- * @param id The message ID to filter on.
+ * @param rxid The message ID to filter on.
  * @return void
  *
  * Searches for an unused message object and configures it to filter the bus on
@@ -36,11 +36,11 @@ void can_init(uint16_t id);
  * filtering for messages with higher ids, since an id of 0 indicates that the
  * message object is not initialized.
  */
-void can_filter(uint16_t id);
+void can_filter(uint16_t rxid);
 
 /**
  * @brief Retrieve a message from the first message object with a set rx flag.
- * @param id A pointer to where the message ID will be copied.
+ * @param rxid A pointer to where the message ID will be copied.
  * @param dat A pointer to where the message will be copied.
  * @param len A pointer to where the message length will be copied.
  * @return void
@@ -49,9 +49,9 @@ void can_filter(uint16_t id);
  * first one it finds with a set reception flag. The id, message and message
  * length of the message object are then copied to the respective memory
  * locations pointed to by the function's parameters. Make sure to reserve
- * enough memory at these memory locations.
+ * enough memory at these locations.
  */
-void can_receive(uint16_t *id, uint8_t *dat, uint8_t *len);
+void can_receive(uint16_t *rxid, uint8_t *dat, uint8_t *len);
 
 /**
  * @brief Transmit a message on the bus.
