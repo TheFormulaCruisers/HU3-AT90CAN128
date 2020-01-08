@@ -1,3 +1,3 @@
 # AT90CAN128
 
-IMPORTANT: AT THIS POINT, THE LIBRARIES IN THIS REPO ARE NOT UP TO DATE. PLEASE, SEE THE [INDIVIDUAL REPOs][https://github.com/TheFormulaCruisers?tab=repositories] PREFIXED WITH lib FOR UP-TO-DATE CODE.
+**IMPORTANT**: At this point, the libraries in this repo are not up to date. please, see the [individual repos]:https://github.com/theformulacruisers?tab=repositories prefixed with *lib* for up-to-date code.
