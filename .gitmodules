@@ -1,0 +1,18 @@
+[submodule "libs/libcan"]
+	path = libs/libcan
+	url = https://github.com/TheFormulaCruisers/libcan.git
+[submodule "libs/libextra"]
+	path = libs/libextra
+	url = https://github.com/TheFormulaCruisers/libextra.git
+[submodule "libs/libspi"]
+	path = libs/libspi
+	url = https://github.com/TheFormulaCruisers/libspi.git
+[submodule "libs/libnode"]
+	path = libs/libnode
+	url = https://github.com/TheFormulaCruisers/libnode.git
+[submodule "libs/liblogger"]
+	path = libs/liblogger
+	url = https://github.com/TheFormulaCruisers/liblogger.git
+[submodule "libs/libnodecontrol"]
+	path = libs/libnodecontrol
+	url = https://github.com/TheFormulaCruisers/libnodecontrol.git
