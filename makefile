@@ -20,7 +20,6 @@ LIBS = \
 OFILES = \
 	main.o \
 	can.o \
-	flag.o \
 	logger.o \
 	nodecontrol.o \
 	spi_slave.o
@@ -36,7 +35,7 @@ main.o: src/main.c
 	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c src/main.c $(LIBS)
 
 can.o: libs/libcan/src/can.c
-	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c libs/libcan/src/can.c $(LIBS)
+	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -DCAN_REV_2B -c libs/libcan/src/can.c $(LIBS)
 
 logger.o: libs/liblogger/src/logger.c
 	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c libs/liblogger/src/logger.c $(LIBS)
