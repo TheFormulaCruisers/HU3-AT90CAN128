@@ -38,9 +38,6 @@ main.o: src/main.c
 can.o: libs/libcan/src/can.c
 	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c libs/libcan/src/can.c $(LIBS)
 
-flag.o: libs/libextra/src/flag.c
-	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c libs/libextra/src/flag.c $(LIBS)
-
 logger.o: libs/liblogger/src/logger.c
 	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c libs/liblogger/src/logger.c $(LIBS)
 
