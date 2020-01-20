@@ -11,8 +11,7 @@
 
 #include <can.h>
 #include <logger.h>
-#include <node.h>
-#include <nodecontrol.h>
+#include <nodectl.h>
 #include <spi_slave.h>
 
 int main(void) {

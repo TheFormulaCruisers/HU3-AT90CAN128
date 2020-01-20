@@ -16,3 +16,6 @@
 [submodule "libs/libnodecontrol"]
 	path = libs/libnodecontrol
 	url = https://github.com/TheFormulaCruisers/libnodecontrol.git
+[submodule "libs/libnodectl"]
+	path = libs/libnodectl
+	url = https://github.com/TheFormulaCruisers/libnodectl

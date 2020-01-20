@@ -14,14 +14,14 @@ LIBS = \
 	-Ilibs/libextra/inc \
 	-Ilibs/liblogger/inc \
 	-Ilibs/libnode/inc \
-	-Ilibs/libnodecontrol/inc \
+	-Ilibs/libnodectl/inc \
 	-Ilibs/libspi/inc
 
 OFILES = \
 	main.o \
 	can.o \
 	logger.o \
-	nodecontrol.o \
+	nodectl.o \
 	spi_slave.o
 
 #
@@ -35,13 +35,13 @@ main.o: src/main.c
 	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c src/main.c $(LIBS)
 
 can.o: libs/libcan/src/can.c
-	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -DCAN_REV_2B -c libs/libcan/src/can.c $(LIBS)
+	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -DCAN_REV_2B -DCAN_RX_MSGBUF_SIZE -DCAN_TX_MSGBUF_SIZE -c libs/libcan/src/can.c $(LIBS)
 
 logger.o: libs/liblogger/src/logger.c
 	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c libs/liblogger/src/logger.c $(LIBS)
 
-nodecontrol.o: libs/libnodecontrol/src/nodecontrol.c
-	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c libs/libnodecontrol/src/nodecontrol.c $(LIBS)
+nodectl.o: libs/libnodectl/src/nodectl.c
+	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -DNODECTL_REGISTER_SIZE=14 -c libs/libnodectl/src/nodectl.c $(LIBS)
 
 spi_slave.o: libs/libspi/src/spi_slave.c
 	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c libs/libspi/src/spi_slave.c $(LIBS)
