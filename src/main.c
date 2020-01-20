@@ -18,28 +18,43 @@ void spi_rotate_log_buffer(void) {
 	spi_slave_register_txbuffer(logger_rotate(), LOGGER_LOG_SIZE);
 }
 
-volatile uint8_t node1_reg = 0x0A;
+volatile const uint8_t node1_msk = 0x01;
+volatile uint8_t node1_reg = 0x01;
 void node1_handle_init(void *msg, uint8_t msg_size) {
-	DDRC |= 0x0F;
-	PORTC = (node1_reg & 0x0F) | (PORTC & 0xF0);
+	DDRC |= node1_msk;
+	PORTC = node1_msk | (PORTC & ~node1_msk);
 	logger_log(LOGGER_LOG_WHEEL1, *((uint16_t *)msg));
 }
 void node1_handle_receive(void *msg, uint8_t msg_size) {
-	node1_reg ^= 0xFF;
-	PORTC = (node1_reg & 0x0F) | (PORTC & 0xF0);
+	node1_reg ^= node1_msk;
+	PORTC = node1_reg | (PORTC & ~node1_msk);
 	logger_log(LOGGER_LOG_WHEEL1, *((uint16_t *)msg));
 }
 
-volatile uint8_t node2_reg = 0xA0;
+volatile const uint8_t node2_msk = 0x02;
+volatile uint8_t node2_reg = 0x02;
 void node2_handle_init(void *msg, uint8_t msg_size) {
-	DDRC |= 0xF0;
-	PORTC = (node2_reg & 0xF0) | (PORTC & 0x0F);
+	DDRC |= node2_msk;
+	PORTC = node2_msk | (PORTC & ~node2_msk);
 	logger_log(LOGGER_LOG_WHEEL2, *((uint16_t *)msg));
 }
 void node2_handle_receive(void *msg, uint8_t msg_size) {
-	node2_reg ^= 0xFF;
-	PORTC = (node2_reg & 0xF0) | (PORTC & 0x0F);
+	node2_reg ^= node2_msk;
+	PORTC = node2_reg | (PORTC & ~node2_msk);
 	logger_log(LOGGER_LOG_WHEEL2, *((uint16_t *)msg));
+}
+
+volatile const uint8_t node3_msk = 0x04;
+volatile uint8_t node3_reg =0x04;
+void node3_handle_init(void *msg, uint8_t msg_size) {
+	DDRC |= node3_msk;
+	PORTC = node3_msk | (PORTC & ~node3_msk);
+	logger_log(LOGGER_LOG_THROTTLE, *((uint16_t *)msg));
+}
+void node3_handle_receive(void *msg, uint8_t msg_size) {
+	node3_reg ^= node3_msk;
+	PORTC = node3_reg | (PORTC & ~node3_msk);
+	logger_log(LOGGER_LOG_THROTTLE, *((uint16_t *)msg));
 }
 
 int main(void) {
@@ -52,17 +67,25 @@ int main(void) {
 	spi_slave_register_txdone_handler(spi_rotate_log_buffer);
 
 	can_init(0);
-	can_filter(1);
-	nodectl_node_register(1);
-	nodectl_handler_register(1, node1_handle_init, NODECTL_HANDLE_INIT);
-	nodectl_handler_register(1, node1_handle_receive, NODECTL_HANDLE_RECEIVE);
-	nodectl_handler_execute(1, (void *)&node_init_val, 2, NODECTL_HANDLE_INIT);
+	can_filter(8);
+	nodectl_node_register(8);
+	nodectl_handler_register(8, node1_handle_init, NODECTL_HANDLE_INIT);
+	nodectl_handler_register(8, node1_handle_receive, NODECTL_HANDLE_RECEIVE);
+	nodectl_handler_execute(8, (void *)&node_init_val, 2, NODECTL_HANDLE_INIT);
 
-	can_filter(2);
-	nodectl_node_register(2);
-	nodectl_handler_register(2, node2_handle_init, NODECTL_HANDLE_INIT);
-	nodectl_handler_register(2, node2_handle_receive, NODECTL_HANDLE_RECEIVE);
-	nodectl_handler_execute(2, (void *)&node_init_val, 2, NODECTL_HANDLE_INIT);
+	can_filter(16);
+	nodectl_node_register(16);
+	nodectl_handler_register(16, node2_handle_init, NODECTL_HANDLE_INIT);
+	nodectl_handler_register(16, node2_handle_receive, NODECTL_HANDLE_RECEIVE);
+	nodectl_handler_execute(16, (void *)&node_init_val, 2, NODECTL_HANDLE_INIT);
+
+	can_filter(32);
+	nodectl_node_register(32);
+	nodectl_handler_register(32, node3_handle_init, NODECTL_HANDLE_INIT);
+	nodectl_handler_register(32, node3_handle_receive, NODECTL_HANDLE_RECEIVE);
+	nodectl_handler_execute(32, (void *)&node_init_val, 2, NODECTL_HANDLE_INIT);
+	
+	sei();
 
 	// Main loop
 	while (1) {
