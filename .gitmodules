@@ -7,15 +7,9 @@
 [submodule "libs/libspi"]
 	path = libs/libspi
 	url = https://github.com/TheFormulaCruisers/libspi.git
-[submodule "libs/libnode"]
-	path = libs/libnode
-	url = https://github.com/TheFormulaCruisers/libnode.git
 [submodule "libs/liblogger"]
 	path = libs/liblogger
 	url = https://github.com/TheFormulaCruisers/liblogger.git
-[submodule "libs/libnodecontrol"]
-	path = libs/libnodecontrol
-	url = https://github.com/TheFormulaCruisers/libnodecontrol.git
 [submodule "libs/libnodectl"]
 	path = libs/libnodectl
 	url = https://github.com/TheFormulaCruisers/libnodectl
