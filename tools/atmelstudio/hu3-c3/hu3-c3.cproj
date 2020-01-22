@@ -13,7 +13,7 @@
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
     <AssemblyName>hu3-at90can128</AssemblyName>
-    <Name>hu3-at90can128</Name>
+    <Name>hu3-c3</Name>
     <RootNamespace>hu3-at90can128</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
