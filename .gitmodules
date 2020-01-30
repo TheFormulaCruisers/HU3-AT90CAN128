@@ -10,6 +10,3 @@
 [submodule "libs/liblogger"]
 	path = libs/liblogger
 	url = https://github.com/TheFormulaCruisers/liblogger.git
-[submodule "libs/libnodectl"]
-	path = libs/libnodectl
-	url = https://github.com/TheFormulaCruisers/libnodectl

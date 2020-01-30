@@ -150,7 +150,7 @@
     <Folder Include="src" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\libs\libcan\inc\can.h">
+    <Compile Include="inc\can.h">
       <SubType>compile</SubType>
       <Link>inc\can.h</Link>
     </Compile>
@@ -158,7 +158,7 @@
       <SubType>compile</SubType>
       <Link>src\can.c</Link>
     </Compile>
-    <Compile Include="..\..\..\libs\liblogger\inc\logger.h">
+    <Compile Include="inc\logger.h">
       <SubType>compile</SubType>
       <Link>inc\logger.h</Link>
     </Compile>
@@ -166,7 +166,7 @@
       <SubType>compile</SubType>
       <Link>src\logger.c</Link>
     </Compile>
-    <Compile Include="..\..\..\libs\libnodectl\inc\nodectl.h">
+    <Compile Include="inc\nodectl.h">
       <SubType>compile</SubType>
       <Link>inc\nodectl.h</Link>
     </Compile>
@@ -174,7 +174,7 @@
       <SubType>compile</SubType>
       <Link>src\nodectl.c</Link>
     </Compile>
-    <Compile Include="..\..\..\libs\libspi\inc\spi_slave.h">
+    <Compile Include="inc\spi_slave.h">
       <SubType>compile</SubType>
       <Link>inc\spi_slave.h</Link>
     </Compile>
