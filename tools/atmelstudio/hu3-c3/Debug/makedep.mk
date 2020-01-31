@@ -6,8 +6,6 @@
 
 ..\..\..\libs\liblogger\src\logger.c
 
-..\..\..\libs\libnodectl\src\nodectl.c
-
 ..\..\..\libs\libspi\src\spi_slave.c
 
 ..\..\..\src\main.c

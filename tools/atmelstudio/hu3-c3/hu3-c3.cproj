@@ -166,14 +166,6 @@
       <SubType>compile</SubType>
       <Link>src\logger.c</Link>
     </Compile>
-    <Compile Include="inc\nodectl.h">
-      <SubType>compile</SubType>
-      <Link>inc\nodectl.h</Link>
-    </Compile>
-    <Compile Include="..\..\..\libs\libnodectl\src\nodectl.c">
-      <SubType>compile</SubType>
-      <Link>src\nodectl.c</Link>
-    </Compile>
     <Compile Include="inc\spi_slave.h">
       <SubType>compile</SubType>
       <Link>inc\spi_slave.h</Link>
