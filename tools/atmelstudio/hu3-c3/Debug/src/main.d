@@ -11,7 +11,7 @@ src/main.d src/main.o: ../../../../src/main.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- ../../../../libs/libcan/inc/can.h \
+ ../../../../libs/libadc/inc/adc.h ../../../../libs/libcan/inc/can.h \
  ../../../../libs/liblogger/inc/logger.h \
  ../../../../libs/libspi/inc/spi_slave.h ../../../../src/nodes/node1.c \
  ../../../../src/nodes/node2.c ../../../../src/nodes/node3.c \
@@ -42,6 +42,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
+
+../../../../libs/libadc/inc/adc.h:
 
 ../../../../libs/libcan/inc/can.h:
 

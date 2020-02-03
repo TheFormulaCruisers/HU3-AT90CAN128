@@ -14,13 +14,15 @@ LIBS = \
 	-Ilibs/libextra/inc \
 	-Ilibs/liblogger/inc \
 	-Ilibs/libnode/inc \
-	-Ilibs/libspi/inc
+	-Ilibs/libspi/inc \
+	-Ilibs/libadc/inc
 
 OFILES = \
 	main.o \
 	can.o \
 	logger.o \
-	spi_slave.o
+	spi_slave.o \
+	adc.o
 
 #
 # Make
@@ -40,6 +42,9 @@ logger.o: libs/liblogger/src/logger.c
 
 spi_slave.o: libs/libspi/src/spi_slave.c
 	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c libs/libspi/src/spi_slave.c $(LIBS)
+
+adc.o: libs/libadc/src/adc.c
+	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c libs/libadc/src/adc.c $(LIBS)
 
 clean:
 	rm *.o

@@ -8,6 +8,7 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <adc.h>
 #include <can.h>
 #include <logger.h>
 #include <spi_slave.h>
@@ -27,8 +28,8 @@ void spi_txdone_log_rotate(void) {
 
 int main(void) {
 	const uint16_t node_init_val = 0x7FFF;
-	uint16_t can_msg_id;//, adc_val;
-	uint8_t can_msg[8], can_msg_size;//, adc_pin;
+	uint16_t can_msg_id, adc_val;
+	uint8_t can_msg[8], can_msg_size, adc_pin;
 
 	// Initialize SPI and logger
 	spi_slave_init();
@@ -56,9 +57,16 @@ int main(void) {
 	node7_init((void *)&node_init_val, 2);
 	node8_init((void *)&node_init_val, 2);
 
+	// Initialize ADC Trigger (tc0)
+	TCCR1A = 0x00;
+	TCCR1B = _BV(CS12) | _BV(CS10);
+	TCCR1C = 0x00;
+	TIMSK1 = 0x00;
+	OCR1A = 2302;
+
 	// Initialize ADC
-	//adc_init(0xFF);
-	
+	adc_init(0x03);
+
 	// Initialize system
 	sei();
 
@@ -97,14 +105,16 @@ int main(void) {
 		}
 
 		// Get and process next temperature or current reading.
-		/*if (adc_poll(&adc_pin, &adc_val)) {
+		if (adc_poll(&adc_pin, &adc_val)) {
 			switch (adc_pin) {
 				case 0: // CONV1 current
+					PORTC = (adc_val << 2) & 0xF0 | PORTC & 0x0F;
 					break;
 				case 1: // CONV1 temp
+					PORTC = PORTC & 0x0F;
 					break;
 			}
-		}*/
+		}
 	}
 
 	return 0;

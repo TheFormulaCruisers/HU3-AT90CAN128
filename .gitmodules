@@ -1,12 +1,12 @@
 [submodule "libs/libcan"]
 	path = libs/libcan
 	url = https://github.com/TheFormulaCruisers/libcan.git
-[submodule "libs/libextra"]
-	path = libs/libextra
-	url = https://github.com/TheFormulaCruisers/libextra.git
 [submodule "libs/libspi"]
 	path = libs/libspi
 	url = https://github.com/TheFormulaCruisers/libspi.git
 [submodule "libs/liblogger"]
 	path = libs/liblogger
 	url = https://github.com/TheFormulaCruisers/liblogger.git
+[submodule "libs/libadc"]
+	path = libs/libadc
+	url = https://github.com/TheFormulaCruisers/libadc

@@ -115,6 +115,7 @@
             <Value>CAN_RX_MSGBUF_SIZE=14</Value>
             <Value>CAN_TX_MSGBUF_SIZE=8</Value>
             <Value>NODECTL_REGISTER_SIZE=14</Value>
+            <Value>ADC_START_TC1_COMP</Value>
           </ListValues>
         </avrgcc.compiler.symbols.DefSymbols>
         <avrgcc.compiler.directories.IncludePaths>
@@ -124,6 +125,7 @@
             <Value>../../../../libs/liblogger/inc</Value>
             <Value>../../../../libs/libnodectl/inc</Value>
             <Value>../../../../libs/libspi/inc</Value>
+            <Value>../../../../libs/libadc/inc</Value>
           </ListValues>
         </avrgcc.compiler.directories.IncludePaths>
         <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
@@ -150,6 +152,14 @@
     <Folder Include="src" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\..\libs\libadc\inc\adc.h">
+      <SubType>compile</SubType>
+      <Link>inc\adc.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\libs\libadc\src\adc.c">
+      <SubType>compile</SubType>
+      <Link>src\adc.c</Link>
+    </Compile>
     <Compile Include="inc\can.h">
       <SubType>compile</SubType>
       <Link>inc\can.h</Link>
