@@ -57,7 +57,7 @@ int main(void) {
 	node7_init((void *)&node_init_val, 2);
 	node8_init((void *)&node_init_val, 2);
 
-	// Initialize ADC Trigger (tc0)
+	// Initialize ADC Trigger (tc1)
 	TCCR1A = 0x00;
 	TCCR1B = _BV(CS12) | _BV(CS10);
 	TCCR1C = 0x00;
