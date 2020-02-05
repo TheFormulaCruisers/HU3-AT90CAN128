@@ -2,18 +2,14 @@
 # Parameters
 #===========
 
-APPNAME     = main
-CXX         = avr-gcc
-CXXFLAGS    = -Wall
-DEVICE		= at90can128
-FCPU		= 16000000
+APPNAME     = c3-firmware
+GCC         = avr-gcc -Wall -mmcu=at90can128 -DF_CPU=16000000 -O2
+OBJCOPY		= avr-objcopy
 
 LIBS = \
 	-Iinc \
 	-Ilibs/libcan/inc \
-	-Ilibs/libextra/inc \
 	-Ilibs/liblogger/inc \
-	-Ilibs/libnode/inc \
 	-Ilibs/libspi/inc \
 	-Ilibs/libadc/inc
 
@@ -28,23 +24,24 @@ OFILES = \
 # Make
 #===========
 
-main: $(OFILES)
-	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -o bin/$(APPNAME) $(OFILES)
+build: $(OFILES)
+	$(GCC) -o $(APPNAME).elf $(OFILES)
+	$(OBJCOPY) -O ihex ${APPNAME}.elf bin/${APPNAME}.hex
 
 main.o: src/main.c
-	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c src/main.c $(LIBS)
+	$(GCC) -c src/main.c $(LIBS)
 
 can.o: libs/libcan/src/can.c
-	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -DCAN_REV_2B -DCAN_RX_MSGBUF_SIZE -DCAN_TX_MSGBUF_SIZE -c libs/libcan/src/can.c $(LIBS)
+	$(GCC) -c libs/libcan/src/can.c $(LIBS)
 
 logger.o: libs/liblogger/src/logger.c
-	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c libs/liblogger/src/logger.c $(LIBS)
+	$(GCC) -c libs/liblogger/src/logger.c $(LIBS)
 
 spi_slave.o: libs/libspi/src/spi_slave.c
-	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c libs/libspi/src/spi_slave.c $(LIBS)
+	$(GCC) -c libs/libspi/src/spi_slave.c $(LIBS)
 
 adc.o: libs/libadc/src/adc.c
-	$(CXX) $(CXXFLAGS) -mmcu=$(DEVICE) -DF_CPU=$(FCPU) -c libs/libadc/src/adc.c $(LIBS)
+	$(GCC) -c libs/libadc/src/adc.c $(LIBS)
 
 clean:
-	rm *.o
+	rm *.o *.elf
