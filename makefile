@@ -5,6 +5,7 @@
 APPNAME     = c3-firmware
 GCC         = avr-gcc -Wall -mmcu=at90can128 -DF_CPU=16000000 -O2
 OBJCOPY		= avr-objcopy
+FLASH		= avrdude -c dragon_jtag -p at90can128 -P /dev/...
 
 LIBS = \
 	-Iinc \
@@ -42,6 +43,9 @@ spi_slave.o: libs/libspi/src/spi_slave.c
 
 adc.o: libs/libadc/src/adc.c
 	$(GCC) -c libs/libadc/src/adc.c $(LIBS)
+
+flash:
+	$(FLASH) -U flash:w:bin/$(APPNAME).hex
 
 clean:
 	rm *.o *.elf
