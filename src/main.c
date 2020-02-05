@@ -27,7 +27,7 @@ void spi_txdone_log_rotate(void) {
 }
 
 int main(void) {
-	const uint16_t node_init_val = 0x7FFF;
+	const uint16_t node_init_val = 0x0000;
 	uint16_t can_msg_id, adc_val;
 	uint8_t can_msg[8], can_msg_size, adc_pin;
 
@@ -39,23 +39,11 @@ int main(void) {
 	// Initialize CAN
 	can_init();
 	can_filter(8, 0xFFFF);
-	can_filter(16, 0xFFFF);
-	can_filter(32, 0xFFFF);
-	can_filter(64, 0xFFFF);
-	can_filter(128, 0xFFFF);
-	can_filter(256, 0xFFFF);
-	can_filter(512, 0xFFFF);
-	can_filter(1024, 0xFFFF);
+	can_filter(9, 0xFFFF);
 
 	// Initialize nodes
-	node1_init((void *)&node_init_val, 2);
-	node2_init((void *)&node_init_val, 2);
-	node3_init((void *)&node_init_val, 2);
-	node4_init((void *)&node_init_val, 2);
-	node5_init((void *)&node_init_val, 2);
-	node6_init((void *)&node_init_val, 2);
-	node7_init((void *)&node_init_val, 2);
-	node8_init((void *)&node_init_val, 2);
+	//node1_init((void *)&node_init_val, 2);
+	//node2_init((void *)&node_init_val, 2);
 
 	// Initialize ADC Trigger (tc1)
 	TCCR1A = 0x00;
@@ -66,8 +54,12 @@ int main(void) {
 
 	// Initialize ADC
 	adc_init(0x03);
+	
+	// Enable power supplies
+	DDRA |= _BV(PA1);
+	PORTA |= _BV(PA1);
 
-	// Initialize system
+	// Enable interrupts
 	sei();
 
 	// Main loop
@@ -78,28 +70,12 @@ int main(void) {
 			can_receive(&can_msg_id, can_msg, &can_msg_size);
 			switch (can_msg_id) {
 				case 8:
-					node1_receive(&can_msg_id, can_msg_size);
+					logger_log(LOGGER_LOG_THROTTLE, (uint16_t)can_msg[0]);
+					//node1_receive(&can_msg_id, can_msg_size);
 					break;
-				case 16:
-					node2_receive(&can_msg_id, can_msg_size);
-					break;
-				case 32:
-					node3_receive(&can_msg_id, can_msg_size);
-					break;
-				case 64:
-					node4_receive(&can_msg_id, can_msg_size);
-					break;
-				case 128:
-					node5_receive(&can_msg_id, can_msg_size);
-					break;
-				case 256:
-					node6_receive(&can_msg_id, can_msg_size);
-					break;
-				case 512:
-					node7_receive(&can_msg_id, can_msg_size);
-					break;
-				case 1024:
-					node8_receive(&can_msg_id, can_msg_size);
+				case 9:
+					logger_log(LOGGER_LOG_BRAKE, (uint16_t)can_msg[0]);
+					//node2_receive(&can_msg_id, can_msg_size);
 					break;
 			}
 		}
@@ -108,13 +84,15 @@ int main(void) {
 		if (adc_poll(&adc_pin, &adc_val)) {
 			switch (adc_pin) {
 				case 0: // CONV1 current
-					PORTC = (adc_val << 2) & 0xF0 | PORTC & 0x0F;
+					//PORTC = (adc_val << 2) & 0xF0 | PORTC & 0x0F;
 					break;
 				case 1: // CONV1 temp
-					PORTC = PORTC & 0x0F;
+					//PORTC = PORTC & 0x0F;
 					break;
 			}
 		}
+		
+		logger_log(LOGGER_LOG_WHEEL1, node_init_val);
 	}
 
 	return 0;
