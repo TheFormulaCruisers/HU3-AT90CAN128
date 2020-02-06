@@ -35,7 +35,7 @@ main.o: src/main.c
 	$(GCC) -c src/main.c $(LIBS)
 
 can.o: libs/libcan/src/can.c
-	$(GCC) -c libs/libcan/src/can.c $(LIBS)
+	$(GCC) -c libs/libcan/src/can.c $(LIBS) -DCAN_REV_2B -DCAN_RX_MSGBUF_SIZE=14 -DCAN_TX_MSGBUF_SIZE=8
 
 logger.o: libs/liblogger/src/logger.c
 	$(GCC) -c libs/liblogger/src/logger.c $(LIBS)
