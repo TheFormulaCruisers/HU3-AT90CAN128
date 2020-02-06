@@ -44,7 +44,7 @@ spi_slave.o: libs/libspi/src/spi_slave.c
 	$(GCC) -c libs/libspi/src/spi_slave.c $(LIBS)
 
 adc.o: libs/libadc/src/adc.c
-	$(GCC) -c libs/libadc/src/adc.c $(LIBS)
+	$(GCC) -c libs/libadc/src/adc.c $(LIBS) -DADC_START_TC1_COMP
 
 flash:
 	$(FLASH) -e -U flash:w:bin/$(APPNAME).hex
