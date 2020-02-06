@@ -3,9 +3,11 @@
 #===========
 
 APPNAME     = c3-firmware
-GCC         = avr-gcc -Wall -mmcu=at90can128 -DF_CPU=16000000 -O2
-OBJCOPY		= avr-objcopy
-FLASH		= avrdude -c dragon_jtag -p at90can128 -P /dev/...
+MCU			= at90can128
+F_CPU		= 16000000
+GCC         = avr-gcc -Wall -mmcu=$(MCU) -DF_CPU=$(F_CPU) -O2
+OBJCOPY		= avr-objcopy -O ihex ${APPNAME}.elf bin/${APPNAME}.hex
+FLASH		= avrdude -c dragon_jtag -p $(MCU) -P usb
 
 LIBS = \
 	-Iinc \
@@ -27,7 +29,7 @@ OFILES = \
 
 build: $(OFILES)
 	$(GCC) -o $(APPNAME).elf $(OFILES)
-	$(OBJCOPY) -O ihex ${APPNAME}.elf bin/${APPNAME}.hex
+	$(OBJCOPY)
 
 main.o: src/main.c
 	$(GCC) -c src/main.c $(LIBS)
@@ -45,7 +47,7 @@ adc.o: libs/libadc/src/adc.c
 	$(GCC) -c libs/libadc/src/adc.c $(LIBS)
 
 flash:
-	$(FLASH) -U flash:w:bin/$(APPNAME).hex
+	$(FLASH) -e -U flash:w:bin/$(APPNAME).hex
 
 clean:
 	rm *.o *.elf
