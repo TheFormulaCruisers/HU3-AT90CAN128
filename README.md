@@ -29,7 +29,7 @@ The following macros are specified when compiling the source:
 
 The _tools_ folder contains an ATMEL Studio project that may be used to build the test program located in _tests_. The project is setup to link to the original files in _inc_ and _src_, thus avoiding unnecessary copies. Its build-in compiler includes _inc_ as well (_Properties > Toolchain > Directories_). Macros are defined at _Properties > Toolchain > Symbols_.
 
-A makefile is provided, but is not setup to generate a programmable image. By using _make_, one may easily check whether the program compiles correctly and without warnings using a terminal or command-prompt.
+A makefile is provided for compiling the source and flashing it to a microcontroller. It requires make, avr-gcc and avrdude to be installed on your system. Generally, it is faster than ATMEL Studio, doesn't create as much clutter and works on Linux, MacOS and Windows. Edit the makefile to compile the required libraries and set compiler options and macros.
 
 ## Devices
 
