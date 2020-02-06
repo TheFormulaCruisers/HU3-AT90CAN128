@@ -27,13 +27,14 @@ void spi_log_rotate(void) {
 }
 
 int main(void) {
-	const uint16_t node_init_val = 1;
 	uint16_t can_msg_id, adc_val;
 	uint8_t can_msg[8], can_msg_size, adc_pin;
 
-	// Initialize SPI and logger
-	// IMPORTANTE: The Raspberry should transfer the first byte, wait a little 
-	// while until the log has been rotated and then transer the other bytes.
+	/* Initialize SPI and logger
+	 * IMPORTANTE: The Raspberry should transfer the first byte, wait a little 
+	 * while until the log has been rotated and then transfer the rest of the 
+	 * bytes.
+	 */
 	spi_slave_init();
 	spi_slave_register_txbuffer(logger_init(), 2*LOGGER_LOG_SIZE);
 	spi_slave_register_txstart_handler(spi_log_rotate);
@@ -52,10 +53,10 @@ int main(void) {
 	TCCR1B = _BV(CS12) | _BV(CS10);
 	TCCR1C = 0x00;
 	TIMSK1 = 0x00;
-	OCR1A = 1000;
+	OCR1A = 512;
 
 	// Initialize ADC
-	adc_init(0x03);
+	adc_init(1<<7|1<<6);
 	
 	// Enable power supplies
 	DDRA |= _BV(PA1);
@@ -80,19 +81,17 @@ int main(void) {
 			}
 		}
 
-		// Get and process next temperature or current reading.
+		// Receive and process temperature or current reading.
 		if (adc_poll(&adc_pin, &adc_val)) {
 			switch (adc_pin) {
-				case 0:
-					logger_log(LOGGER_LOG_FLUID_FLOW, adc_val>>2);
+				case 6:
+					logger_log(LOGGER_LOG_FLUID_FLOW, adc_val);
 					break;
-				case 1:
-					logger_log(LOGGER_LOG_FLUID_TEMP, adc_val>>2);
+				case 7:
+					logger_log(LOGGER_LOG_FLUID_TEMP, adc_val);
 					break;
 			}
 		}
-		
-		logger_log(LOGGER_LOG_WHEEL1, node_init_val);
 	}
 
 	return 0;

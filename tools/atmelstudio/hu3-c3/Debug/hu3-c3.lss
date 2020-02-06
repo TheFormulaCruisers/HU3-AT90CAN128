@@ -3,31 +3,31 @@ hu3-c3.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000000  00800100  00800100  000009b2  2**0
+  0 .data         00000000  00800100  00800100  000009d4  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         0000093e  00000000  00000000  00000074  2**1
+  1 .text         00000960  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          0000013c  00800100  00800100  000009b2  2**0
+  2 .bss          0000013c  00800100  00800100  000009d4  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  000009b2  2**0
+  3 .comment      00000030  00000000  00000000  000009d4  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000009e4  2**2
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000a04  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000118  00000000  00000000  00000a24  2**0
+  5 .debug_aranges 00000118  00000000  00000000  00000a44  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00001667  00000000  00000000  00000b3c  2**0
+  6 .debug_info   0000167d  00000000  00000000  00000b5c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000ee3  00000000  00000000  000021a3  2**0
+  7 .debug_abbrev 00000ecd  00000000  00000000  000021d9  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000c3a  00000000  00000000  00003086  2**0
+  8 .debug_line   00000c58  00000000  00000000  000030a6  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000314  00000000  00000000  00003cc0  2**2
+  9 .debug_frame  00000314  00000000  00000000  00003d00  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    0000092c  00000000  00000000  00003fd4  2**0
+ 10 .debug_str    00000917  00000000  00000000  00004014  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000009b4  00000000  00000000  00004900  2**0
+ 11 .debug_loc    000009b4  00000000  00000000  0000492b  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 000000c8  00000000  00000000  000052b4  2**0
+ 12 .debug_ranges 000000c8  00000000  00000000  000052df  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -130,7 +130,7 @@ Disassembly of section .text:
   ac:	b2 07       	cpc	r27, r18
   ae:	e1 f7       	brne	.-8      	; 0xa8 <.do_clear_bss_loop>
   b0:	ef d3       	rcall	.+2014   	; 0x890 <main>
-  b2:	43 c4       	rjmp	.+2182   	; 0x93a <_exit>
+  b2:	54 c4       	rjmp	.+2216   	; 0x95c <_exit>
 
 000000b4 <__bad_interrupt>:
   b4:	a5 cf       	rjmp	.-182    	; 0x0 <__vectors>
@@ -1176,10 +1176,10 @@ void *logger_rotate(void) {
 00000798 <spi_slave_init>:
 }
 
-void spi_slave_register_txstart_handler(void (*txstart_handler)()) {
+void spi_slave_register_txdone_handler(void (*txdone_handler)()) {
 
 	// Register handler
-	_txstart_handler = txstart_handler;
+	_txdone_handler = txdone_handler;
  798:	88 e0       	ldi	r24, 0x08	; 8
  79a:	84 b9       	out	0x04, r24	; 4
  79c:	8f ef       	ldi	r24, 0xFF	; 255
@@ -1205,15 +1205,9 @@ void spi_slave_register_txstart_handler(void (*txstart_handler)()) {
  7d4:	8e bd       	out	0x2e, r24	; 46
  7d6:	08 95       	ret
 
-000007d8 <spi_slave_register_txdone_handler>:
-}
-
-void spi_slave_register_txdone_handler(void (*txdone_handler)()) {
-
-	// Register handler
-	_txdone_handler = txdone_handler;
- 7d8:	90 93 35 02 	sts	0x0235, r25	; 0x800235 <_txdone_handler+0x1>
- 7dc:	80 93 34 02 	sts	0x0234, r24	; 0x800234 <_txdone_handler>
+000007d8 <spi_slave_register_txstart_handler>:
+ 7d8:	90 93 37 02 	sts	0x0237, r25	; 0x800237 <_txstart_handler+0x1>
+ 7dc:	80 93 36 02 	sts	0x0236, r24	; 0x800236 <_txstart_handler>
  7e0:	08 95       	ret
 
 000007e2 <__vector_20>:
@@ -1322,12 +1316,12 @@ ISR(SPI_STC_vect) {
  884:	1f 90       	pop	r1
  886:	18 95       	reti
 
-00000888 <spi_txdone_log_rotate>:
+00000888 <spi_log_rotate>:
 // #include "nodes/node6.c"
 // #include "nodes/node7.c"
 // #include "nodes/node8.c"
 
-void spi_txdone_log_rotate(void) {
+void spi_log_rotate(void) {
 	spi_slave_register_txbuffer(logger_rotate(), 2*LOGGER_LOG_SIZE);
  888:	6e df       	rcall	.-292    	; 0x766 <logger_rotate>
  88a:	60 e1       	ldi	r22, 0x10	; 16
@@ -1348,11 +1342,11 @@ int main(void) {
  89e:	de bf       	out	0x3e, r29	; 62
  8a0:	0f be       	out	0x3f, r0	; 63
  8a2:	cd bf       	out	0x3d, r28	; 61
-	const uint16_t node_init_val = 0x0000;
-	uint16_t can_msg_id, adc_val;
-	uint8_t can_msg[8], can_msg_size, adc_pin;
-
-	// Initialize SPI and logger
+	/* Initialize SPI and logger
+	 * IMPORTANTE: The Raspberry should transfer the first byte, wait a little 
+	 * while until the log has been rotated and then transer the rest of the 
+	 * bytes.
+	 */
 	spi_slave_init();
  8a4:	79 df       	rcall	.-270    	; 0x798 <spi_slave_init>
 	spi_slave_register_txbuffer(logger_init(), 2*LOGGER_LOG_SIZE);
@@ -1360,9 +1354,9 @@ int main(void) {
  8a8:	60 e1       	ldi	r22, 0x10	; 16
  8aa:	89 df       	rcall	.-238    	; 0x7be <spi_slave_register_txbuffer>
  8ac:	84 e4       	ldi	r24, 0x44	; 68
-	spi_slave_register_txdone_handler(spi_txdone_log_rotate);
+	spi_slave_register_txstart_handler(spi_log_rotate);
  8ae:	94 e0       	ldi	r25, 0x04	; 4
- 8b0:	93 df       	rcall	.-218    	; 0x7d8 <spi_slave_register_txdone_handler>
+ 8b0:	93 df       	rcall	.-218    	; 0x7d8 <spi_slave_register_txstart_handler>
  8b2:	f8 dc       	rcall	.-1552   	; 0x2a4 <can_init>
 
 	// Initialize CAN
@@ -1393,15 +1387,15 @@ int main(void) {
 	TCCR1C = 0x00;
  8d6:	10 92 6f 00 	sts	0x006F, r1	; 0x80006f <__TEXT_REGION_LENGTH__+0x7e006f>
 	TIMSK1 = 0x00;
- 8da:	8e ef       	ldi	r24, 0xFE	; 254
- 8dc:	98 e0       	ldi	r25, 0x08	; 8
-	OCR1A = 2302;
+ 8da:	80 e0       	ldi	r24, 0x00	; 0
+ 8dc:	92 e0       	ldi	r25, 0x02	; 2
+	OCR1A = 512;
  8de:	90 93 89 00 	sts	0x0089, r25	; 0x800089 <__TEXT_REGION_LENGTH__+0x7e0089>
  8e2:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <__TEXT_REGION_LENGTH__+0x7e0088>
- 8e6:	83 e0       	ldi	r24, 0x03	; 3
+ 8e6:	80 ec       	ldi	r24, 0xC0	; 192
 
 	// Initialize ADC
-	adc_init(0x03);
+	adc_init(1<<7|1<<6);
  8e8:	e6 db       	rcall	.-2100   	; 0xb6 <adc_init>
  8ea:	09 9a       	sbi	0x01, 1	; 1
  8ec:	11 9a       	sbi	0x02, 1	; 2
@@ -1445,7 +1439,6 @@ int main(void) {
  918:	81 e0       	ldi	r24, 0x01	; 1
  91a:	11 df       	rcall	.-478    	; 0x73e <logger_log>
  91c:	04 c0       	rjmp	.+8      	; 0x926 <main+0x96>
-					// node1_receive(&can_msg_id, can_msg_size);
 					break;
  91e:	6d 81       	ldd	r22, Y+5	; 0x05
 				case 9:
@@ -1468,16 +1461,39 @@ int main(void) {
 			}
 		}
 
-		// Get and process next temperature or current reading.
+		// Receive and process temperature or current reading.
 		if (adc_poll(&adc_pin, &adc_val)) {
  930:	7f 4f       	sbci	r23, 0xFF	; 255
  932:	ce 01       	movw	r24, r28
  934:	0e 96       	adiw	r24, 0x0e	; 14
  936:	f9 db       	rcall	.-2062   	; 0x12a <adc_poll>
- 938:	f6 cf       	rjmp	.-20     	; 0x926 <main+0x96>
+ 938:	88 23       	and	r24, r24
+ 93a:	a9 f3       	breq	.-22     	; 0x926 <main+0x96>
+ 93c:	8e 85       	ldd	r24, Y+14	; 0x0e
+ 93e:	86 30       	cpi	r24, 0x06	; 6
+			switch (adc_pin) {
+ 940:	19 f0       	breq	.+6      	; 0x948 <main+0xb8>
+ 942:	87 30       	cpi	r24, 0x07	; 7
+ 944:	31 f0       	breq	.+12     	; 0x952 <main+0xc2>
+ 946:	ef cf       	rjmp	.-34     	; 0x926 <main+0x96>
+ 948:	6b 81       	ldd	r22, Y+3	; 0x03
+				case 6:
+					logger_log(LOGGER_LOG_FLUID_FLOW, adc_val);
+ 94a:	7c 81       	ldd	r23, Y+4	; 0x04
+ 94c:	86 e0       	ldi	r24, 0x06	; 6
+ 94e:	f7 de       	rcall	.-530    	; 0x73e <logger_log>
+ 950:	ea cf       	rjmp	.-44     	; 0x926 <main+0x96>
+ 952:	6b 81       	ldd	r22, Y+3	; 0x03
+					break;
+ 954:	7c 81       	ldd	r23, Y+4	; 0x04
+				case 7:
+					logger_log(LOGGER_LOG_FLUID_TEMP, adc_val);
+ 956:	87 e0       	ldi	r24, 0x07	; 7
+ 958:	f2 de       	rcall	.-540    	; 0x73e <logger_log>
+ 95a:	e5 cf       	rjmp	.-54     	; 0x926 <main+0x96>
 
-0000093a <_exit>:
- 93a:	f8 94       	cli
+0000095c <_exit>:
+ 95c:	f8 94       	cli
 
-0000093c <__stop_program>:
- 93c:	ff cf       	rjmp	.-2      	; 0x93c <__stop_program>
+0000095e <__stop_program>:
+ 95e:	ff cf       	rjmp	.-2      	; 0x95e <__stop_program>
