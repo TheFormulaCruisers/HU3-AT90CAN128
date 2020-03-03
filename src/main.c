@@ -36,7 +36,7 @@ int main(void) {
 	 * bytes.
 	 */
 	spi_slave_init();
-	spi_slave_register_txbuffer(logger_init(), 2*LOGGER_LOG_SIZE);
+	spi_slave_register_txbuffer(logger_init(), LOGGER_LOG_SIZE);
 	spi_slave_register_txstart_handler(spi_log_rotate);
 
 	// Initialize CAN
