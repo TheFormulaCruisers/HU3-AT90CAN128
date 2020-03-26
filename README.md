@@ -14,7 +14,7 @@ Such a node specific function may log certain data using the logger library. The
 
 The SPI library implements slave operation of the builtin SPI controller. It registers the static (not being written to) log buffer and transfers it on request of the SPI master (which is the Raspberry Pi). When a new transfer is initiated, libspi calls a function that rotates - exchanges read/write buffers - the log and registers the new log buffer so that the moest recent data is available to the reader.
 
-The ADC library is setup to read the power supply temperature and current measurements that are present as a variable voltage on six of the ADC channel pins. Since only one channel may be sampled at a time, the library implements a buffer for each one of them and writes the results to the respective memory subsequently using an interrupt service routine. The main loop retrieves new data from the conversion buffer for further processing. New conversions are started on a compare flag of timer/counter 1. The timer/counter compare flag is cleared by libadc during its ISR.
+The ADC library is setup to read the power supply temperature and current measurements that are present as a variable voltage on six of the ADC channel pins. Since only one channel may be sampled at a time, the library implements a buffer for each one of them and writes the results to the respective memory subsequently using an interrupt service routine. The main loop retrieves new data from the conversion buffer for further processing. New conversions are started on a compare flag of timer/counter 1. The timer/counter compare flag is cleared by libadc during its Interrupt Service Routine.
 
 ## Macros
 
