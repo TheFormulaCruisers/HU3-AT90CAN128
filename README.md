@@ -2,7 +2,7 @@
 
 C3 is the main controller in the HU-3. It processes all data coming from nodes and uses that data to control various components, e.g. the motor controller. It may transmit measurement data to the Raspberry Pi, using their SPI connection, for the purpose of being logged and/or displayed on the driver's dashboard. Further, it measures on board power supply currents and temperatures.
 
-This repository contains both the main program as well as the node specific functions. External libraries, such as libcan, libadc, liblogger and libspi, are imported from different repositories as Git submodules. This approach promotes the ability to use a library in other projects, such as [HU3-Nodes](https://github.com/TheFormulaCruisers/HU3-Nodes) and it may improve its maintainability and documentability.
+This repository contains both the main program as well as the node specific functions. External libraries, such as libcan, libadc, liblogger and libspi, are imported from different repositories as Git submodules. This approach promotes the ability to use a library in other projects, such as [HU3-Nodes](https://github.com/TheFormulaCruisers/HU3-Nodes) and improves its maintainability and documentability.
 
 ## Operation
 
